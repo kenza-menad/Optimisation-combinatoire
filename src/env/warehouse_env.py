@@ -115,8 +115,8 @@ if __name__ == "__main__":
     # On passe à 200x200 pour avoir plus de place pour les futurs gros tests
     env = WarehouseEnvironment(width=200, height=200)
 
-    # On teste avec 100 articles pour voir si l'environnement tient le coup
-    test_orders = env.generate_orders(num_orders=10, items_per_order=(10, 10), seed=42)
+    # On teste avec n articles pour voir si l'environnement tient le coup
+    test_orders = env.generate_orders(num_orders=10, items_per_order=(10, 20), seed=42)
     all_points = env.flatten_orders(test_orders)
 
     print(f"Test : {len(all_points)} articles générés.")
