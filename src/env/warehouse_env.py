@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-
 class WarehouseEnvironment:
     def __init__(self, width=100, height=100, depot=(0, 0)):
         """
@@ -62,7 +61,6 @@ class WarehouseEnvironment:
 
         # Affichage des articles
         if order_points is not None and len(order_points) > 0:
-            # Vérifie si c'est un tableau Numpy (pour Kenza) ou une liste (pour le reste)
             if isinstance(order_points, np.ndarray):
                 x_coords = order_points[:, 0]
                 y_coords = order_points[:, 1]
@@ -98,9 +96,10 @@ class WarehouseEnvironment:
         # Afficher le dépôt (rouge)
         plt.scatter(*self.depot, color='red', s=150, marker='s', label='Dépôt', zorder=10)
 
-        # Ajouter le numéro d'ordre de ramassage à côté de chaque point
-        for i in range(1, len(route) - 1):
-            plt.text(route[i][0] + 1, route[i][1] + 1, str(i), fontsize=10, color='black', fontweight='bold')
+        # Ajouter le numéro d'ordre seulement si la route n'est pas trop chargée (< 50 points)
+        if len(route) < 50:
+            for i in range(1, len(route) - 1):
+                plt.text(route[i][0] + 1, route[i][1] + 1, str(i), fontsize=10, color='black', fontweight='bold')
 
         plt.title(title)
         plt.xlim(-5, self.width + 5)
@@ -113,10 +112,12 @@ class WarehouseEnvironment:
 # --- TEST DU FICHIER MASTER ---
 if __name__ == "__main__":
     print("Initialisation de l'entrepôt de référence...")
-    env = WarehouseEnvironment(width=100, height=100)
+    # On passe à 200x200 pour avoir plus de place pour les futurs gros tests
+    env = WarehouseEnvironment(width=200, height=200)
 
-    # On utilise seed=42 pour que le test donne toujours le même résultat
-    test_orders = env.generate_orders(num_orders=1, items_per_order=(8, 8), seed=42)
+    # On teste avec 100 articles pour voir si l'environnement tient le coup
+    test_orders = env.generate_orders(num_orders=10, items_per_order=(10, 10), seed=42)
+    all_points = env.flatten_orders(test_orders)
 
-    print(f"Test de génération (Commande 1) : {test_orders[0]}")
-    env.plot_warehouse(order_points=test_orders[0], title="Test de l'environnement complet")
+    print(f"Test : {len(all_points)} articles générés.")
+    env.plot_warehouse(order_points=all_points, title="Test de l'environnement avec 100 articles")
