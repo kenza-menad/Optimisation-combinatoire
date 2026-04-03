@@ -1,16 +1,12 @@
 \babel@toc {french}{}\relax 
-\contentsline {chapter}{\numberline {1}Introduction}{4}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Intégration du Machine Learning}{5}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Les algorithmes de clustering évalués}{5}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Sélection automatique du nombre de clusters k}{5}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Métriques d'évaluation des clusterings}{6}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Résultats et comparaison}{6}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Visualisations}{7}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Choix de ML - K-Means}{8}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Intégration avec la métaheuristique}{9}{section.2.7}%
-\contentsline {chapter}{\numberline {3}Conclusion}{10}{chapter.3}%
-\contentsline {chapter}{Bibliographie}{10}{Item.5}%
-\contentsline {chapter}{Webographie}{11}{chapter*.2}%
-\contentsline {chapter}{\numberline {4}Annexes}{13}{chapter.4}%
-\contentsline {section}{\numberline {.1}Exemple d'annexe}{13}{section.Alph0.1}%
-\contentsline {section}{\numberline {.2}Une autre annexe}{13}{section.Alph0.2}%
+\contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Intégration du Machine Learning}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Les algorithmes de clustering évalués}{4}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Sélection automatique du nombre de clusters k}{4}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Métriques d'évaluation des clusterings}{5}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Résultats et comparaison}{5}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Visualisations}{6}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Choix de ML - K-Means}{7}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Intégration avec la métaheuristique}{8}{section.2.7}%
+\contentsline {chapter}{\numberline {3}Conclusion}{9}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Ressources et code source}{10}{chapter.4}%

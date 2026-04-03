@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.3)  3 APR 2026 19:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.3)  3 APR 2026 20:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -601,7 +601,7 @@ Package tocbasic Info: setting babel extension for `lol' on input line 73.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<logo_Paris_Nanterre_couleur_RVB.png, id=63, 619.31375pt x 132.495pt>
+<logo_Paris_Nanterre_couleur_RVB.png, id=47, 619.31375pt x 132.495pt>
 File: logo_Paris_Nanterre_couleur_RVB.png Graphic file (type png)
 <use logo_Paris_Nanterre_couleur_RVB.png>
 Package pdftex.def Info: logo_Paris_Nanterre_couleur_RVB.png  used on input lin
@@ -637,7 +637,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 74.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 74.
-<bordure.png, id=65, 63.23625pt x 522.95375pt>
+<bordure.png, id=49, 63.23625pt x 522.95375pt>
 File: bordure.png Graphic file (type png)
 <use bordure.png>
 Package pdftex.def Info: bordure.png  used on input line 74.
@@ -652,126 +652,140 @@ _Paris_Nanterre_couleur_RVB.png>]
 \openout4 = `main.nlo'.
 
 Package nomencl Info: Writing nomenclature file main.nlo on input line 74.
- [2
 
-]
 (C:/Users\PC\PycharmProjects\Optimisation-combinatoire\out\main.toc)
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [3
+ [2
+
 
 ]
 Chapitre 1.
-[4
 
-]
+Underfull \hbox (badness 10000) in paragraph at lines 79--85
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--93
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--96
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--105
+
+ []
+
+[3
+
+{C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]
 Chapitre 2.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 8
-1.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+16.
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [5
+) [4
 
 {C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}{C:/Us
 ers/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-22.
+57.
 
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 137--137
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
 []|\T1/lmr/m/n/12 Calinski-
  []
 
 
-Underfull \hbox (badness 1975) in paragraph at lines 137--138
+Underfull \hbox (badness 1975) in paragraph at lines 172--173
 []|\T1/lmr/m/n/12 Densité intra-cluster vs dis-per-sion inter-
  []
 
 
-Underfull \hbox (badness 2401) in paragraph at lines 139--139
+Underfull \hbox (badness 2401) in paragraph at lines 174--174
 []|\T1/lmr/m/n/12 Temps d'exé-cu-
  []
 
 
-Overfull \hbox (118.84157pt too wide) in paragraph at lines 149--164
+Overfull \hbox (118.84157pt too wide) in paragraph at lines 184--199
  [][] 
  []
 
-[6{C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/U
-sers/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}
+[5{C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}
 pdfTeX warning (ext4): destination with the same identifier (name{table.2.1}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.171 \item \textbf
+l.206 \item \textbf
                    {GMM (Gaussian Mixture Model)} donne les scores les plus ...
 
 pdfTeX warning (ext4): destination with the same identifier (name{table.2.2}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.171 \item \textbf
+l.206 \item \textbf
                    {GMM (Gaussian Mixture Model)} donne les scores les plus ...
 ]
-<../../ml/fig1_comparaison_clusterings.png, id=125, 1004.0712pt x 710.655pt>
+<../../ml/fig1_comparaison_clusterings.png, id=100, 1004.0712pt x 710.655pt>
 File: ../../ml/fig1_comparaison_clusterings.png Graphic file (type png)
 <use ../../ml/fig1_comparaison_clusterings.png>
 Package pdftex.def Info: ../../ml/fig1_comparaison_clusterings.png  used on inp
-ut line 178.
+ut line 213.
 (pdftex.def)             Requested size: 432.19548pt x 305.89015pt.
-<../../ml/fig2_metriques_comparaison.png, id=126, 1149.093pt x 358.4592pt>
+<../../ml/fig2_metriques_comparaison.png, id=101, 1149.093pt x 358.4592pt>
 File: ../../ml/fig2_metriques_comparaison.png Graphic file (type png)
 <use ../../ml/fig2_metriques_comparaison.png>
 Package pdftex.def Info: ../../ml/fig2_metriques_comparaison.png  used on input
- line 185.
+ line 220.
 (pdftex.def)             Requested size: 441.01773pt x 137.57784pt.
- [7
+ [6
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.189 \end{figure}
+l.224 \end{figure}
                    <../../ml/fig1_comparaison_clusterings.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 197--198
+Underfull \hbox (badness 10000) in paragraph at lines 232--233
 
  []
 
-<../../ml/fig3_best_clustering_detail.png, id=135, 1004.0712pt x 427.3566pt>
+<../../ml/fig3_best_clustering_detail.png, id=109, 1004.0712pt x 427.3566pt>
 File: ../../ml/fig3_best_clustering_detail.png Graphic file (type png)
 <use ../../ml/fig3_best_clustering_detail.png>
 Package pdftex.def Info: ../../ml/fig3_best_clustering_detail.png  used on inpu
-t line 203.
+t line 238.
 (pdftex.def)             Requested size: 441.01773pt x 187.70491pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [8
+ [7
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.2}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.207 \section
+l.242 \section
               {IntÃ©gration avec la mÃ©taheuristique} <../../ml/fig2_metriques_
-comparaison.png>] [9
+comparaison.png>] [8
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.3}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.210 \chapter
+l.246 \chapter
               {Conclusion} <../../ml/fig3_best_clustering_detail.png>]
 Chapitre 3.
-[10
-
-] [11
-
-] [12
+[9
 
 ]
 Chapitre 4.
-[13
+[10
 
 ] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
@@ -781,14 +795,14 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 769362F8A5CBBF8697BB0BA2BCA8A476;2517.
+(rerunfilecheck)             Checksum: 2425D5FF0E0B8F0C5B742C3BD5677F72;2123.
  ) 
 Here is how much of TeX's memory you used:
- 15283 strings out of 467870
- 254093 string characters out of 5419808
- 778714 words of memory out of 5000000
- 43884 multiletter control sequences out of 15000+600000
- 670221 words of font info for 64 fonts, out of 8000000 for 9000
+ 15251 strings out of 467870
+ 253690 string characters out of 5419808
+ 777714 words of memory out of 5000000
+ 43868 multiletter control sequences out of 15000+600000
+ 665957 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  115i,13n,110p,555b,557s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><
@@ -796,13 +810,12 @@ C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:
 /Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Us
 ers/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/
 PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/PC/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/PC/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/PC/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
+AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/PC/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
 Output written on C:/Users\PC\PycharmProjects\Optimisation-combinatoire\out\mai
-n.pdf (13 pages, 673138 bytes).
+n.pdf (10 pages, 660319 bytes).
 PDF statistics:
- 234 PDF objects out of 1000 (max. 8388607)
- 44 named destinations out of 1000 (max. 500000)
- 146 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 182 PDF objects out of 1000 (max. 8388607)
+ 29 named destinations out of 1000 (max. 500000)
+ 114 words of extra memory for PDF output out of 10000 (max. 10000000)
 

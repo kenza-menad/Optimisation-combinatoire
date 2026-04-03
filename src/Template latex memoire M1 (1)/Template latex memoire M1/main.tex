@@ -73,7 +73,42 @@ Commerce (TSP) et du Clustering}
 \begin{document}
 \pagedegarde
 \tableofcontents
+
 \chapter{Introduction}
+
+La préparation de commandes, ou \textit{Order Picking}, est l'une des
+opérations les plus coûteuses dans la gestion d'un entrepôt. Elle représente
+en moyenne 55\% des coûts opérationnels d'un entrepôt, et consiste à collecter
+des articles dispersés dans différentes zones pour constituer des commandes
+clients. Optimiser les déplacements du préparateur permet de réduire
+significativement ces coûts et d'améliorer la productivité.\\
+
+Ce problème peut être modélisé comme un \textbf{Problème du Voyageur de
+Commerce} (TSP — \textit{Travelling Salesman Problem}) : le préparateur
+doit visiter un ensemble de points (les articles à collecter) en parcourant
+la distance la plus courte possible, en partant et en revenant au dépôt.
+Cependant, lorsque le nombre d'articles est élevé (entre 75 et 150 dans
+notre cas), l'espace de recherche explose  il y a $150!$ tournées possibles
+ce qui rend une résolution exacte impossible en temps raisonnable.\\
+
+Pour faire face à cette complexité, nous proposons une \textbf{approche hybride}
+combinant deux familles de méthodes complémentaires :\\
+
+\begin{itemize}
+    \item Le \textbf{Machine Learning} (clustering K-Means) pour décomposer
+    intelligemment le problème en sous-problèmes plus petits, en regroupant
+    les articles géographiquement proches en batches cohérents.
+
+    \item Les \textbf{Métaheuristiques} (Algorithme des Colonies de Fourmis
+    et Algorithme Génétique) pour optimiser les tournées à l'intérieur de
+    chaque batch, et comparer leurs performances.\\
+\end{itemize}
+
+L'idée centrale est d'utiliser le clustering \textbf{en amont} de la
+métaheuristique : plutôt que de résoudre un TSP global de 150 points,
+on résout 7 sous-TSP d'environ 21 articles chacun, ce qui réduit
+drastiquement la complexité du problème.
+
 
 
 \chapter{Intégration du Machine Learning}
@@ -206,40 +241,14 @@ On observe que les clusters sont globalement équilibrés (de 14 à 30 articles)
 \end{figure}
 \section{Intégration avec la métaheuristique}
 Le module ML transmet à la métaheuristique un dictionnaire Python structuré contenant : les batches (articles par cluster), les centroïdes, la matrice de distances de Manhattan entre centroïdes, et les coordonnées du dépôt. La métaheuristique n'a donc plus à traiter 150 points d'un seul coup, mais 1 TSP de 7 nœuds + 7 sous-TSP d'environ 21 articles chacun.
+
 \textbf{Gain de complexité :} Sans clustering : 150! permutations. Avec clustering : 7! + 7 × 21! — réduction drastique de l'espace de recherche.
 \chapter{Conclusion}
-La conclusion est la dernière partie du travail écrit (la bibliographie et les annexes n’étant pas considérées comme faisant partie du texte lui-même). Elle est en général organisée comme suit :
-            \begin{center}
-            \begin{enumerate}
-                \item résumé du travail et des contributions
-                \item rappel des résultats principaux
-                \item applications possibles des résultats (s’il y a lieu)
-                \item limitations de la solution proposée
-                \item perspectives (pistes pour d’éventuels travaux futurs).
-            \end{enumerate}
-   \end{center}
-Le texte de la conclusion doit rester neutre mais doit mettre en avant l’apport de l’auteur par rapport au sujet.
 
 
-\renewcommand{\bibname}{Bibliographie}
-\addcontentsline{toc}{chapter}{Bibliographie}
-\renewcommand{\refname}{}
-\begin{thebibliography}{2}
-   \bibitem[label]{cle} Auteur, TITRE, editeur, annee
-   \bibitem[LAM94]{lam1} L. LAMPORT, {\it \LaTeX : A Document preparation system, Addison-Wesley, 1994}
-\end{thebibliography}
-
-\renewcommand{\bibname}{Webographie}
-\addcontentsline{toc}{chapter}{Webographie}
-\begin{thebibliography}{2}
-   \bibitem[CAT]{cat} \url{savoircoder.fr/cat}
-\end{thebibliography}
-
-\chapter{Annexes}
-\appendix
-\makeatletter
-\def\@seccntformat#1{Annexe~\csname the#1\endcsname:\quad}
-\makeatother
-	\section{Exemple d'annexe}
-	\section{Une autre annexe}
+\chapter{Ressources et code source}
+L'intégralité du code source de ce projet est disponible sur GitHub :
+\begin{center}
+    \url{https://github.com/kenza-menad/Optimisation-combinatoire}
+\end{center}
 \end{document}
