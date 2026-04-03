@@ -9,6 +9,7 @@
 			left=3cm, right=2.5cm,
 			headheight=15pt]{geometry}
 \usepackage{graphicx}
+\usepackage{float}
 \usepackage{eso-pic}	% Nécessaire pour mettre des images en arrière plan
 \usepackage{array} 
 \usepackage{hyperref}
@@ -75,31 +76,15 @@ Commerce (TSP) et du Clustering}
 \tableofcontents
 
 \chapter{Introduction}
-L'introduction est la première section de votre mémoire scientifique et elle sert à présenter votre travail au lecteur. Elle doit énoncer clairement l'objectif de votre recherche, mettre en contexte votre étude et présenter brièvement les principales questions que vous allez aborder dans votre mémoire. Elle doit convaincre le lecteur que le travail vaut la peine d’être lu. Il faut motiver ce lecteur, qui n’est peut-être pas a priori intéressé par votre travail. Expliquez pourquoi le problème étudié est important, quelle sera votre contribution et pourquoi les solutions apportées sont appropriées. Gardez à l’esprit que le lecteur n’a pas encore lu le travail, qu’il ne connaît pas le sujet et qu’il n’est pas un expert du domaine.
-\chapter{Découpage du mémoire}
-      \begin{itemize}
-                \item Un mémoire est découpé en chapitres.
-                \item Un chapitre est découpé en sections.
-                \item Une section est découpée en sous-sections.
-                \item Dans certains cas on peut avoir des sous-sous-sections.
-                \item On évite un découpage plus important. Donc pas de numérotation du type 5.4.3.2.1 .
-            \end{itemize}
-
-\begin{enumerate}
-            \item Le titre d'une section sert à structurer le texte et à introduire le sujet de la section.
-            \item Le titre n'est pas toujours lu (malheureusement).
-            \item Le premier paragraphe de la section doit donc introduire la section en précisant son sujet car seul le titre ne suffit pas.
-            \item Pour des sections de haut niveau (comme un chapitre), il est utile de commencer par une brève description du contenu, en présentant les sous-sections.
-\end{enumerate}
 
 
-\chapter{Intégration du Machine Learning}
+\section{Intégration du Machine Learning}
 Pourquoi utiliser le Machine Learning ?
 Notre problème consiste à minimiser la distance parcourue par un préparateur de commandes dans un entrepôt de 200 × 200 unités, avec entre 75 et 150 articles à collecter. Si on soumet directement ces points à une métaheuristique (ACO ou algorithme génétique), on obtient un TSP de grande taille : l'espace de recherche explose (150! permutations possibles) et la convergence est très lente.
 
 Notre solution : utiliser le Machine Learning en amont pour regrouper les articles géographiquement proches en batches. Chaque batch devient alors un sous-TSP de petite taille, que la métaheuristique résout rapidement. C'est l'idée centrale de notre approche hybride ML + métaheuristique.
 
-\section{Les algorithmes de clustering évalués}
+\subsection{Les algorithmes de clustering évalués}
 Le clustering est une méthode d'apprentissage non supervisé : elle regroupe des données en groupes homogènes (clusters) sans étiquette préalable. Ici, chaque point est la coordonnée (x, y) d'un article. Nous avons comparé quatre algorithmes de familles différentes :
 \begin{itemize}
     \item \textbf{K-Means} : algorithme de partitionnement itératif basé sur la
@@ -121,7 +106,7 @@ Le clustering est une méthode d'apprentissage non supervisé : elle regroupe de
     sur la densité. Il regroupe les points denses en clusters et marque comme
     bruit les points isolés. Il ne nécessite pas de spécifier $k$ à l'avance.
 \end{itemize}
-\section{Sélection automatique du nombre de clusters k}
+\subsection{Sélection automatique du nombre de clusters k}
 K-Means, Agglomerative et GMM nécessitent de fixer $k$ avant l'exécution.
 Pour choisir $k$ automatiquement, nous utilisons le \textbf{Silhouette Score},
 calculé pour $k$ allant de 2 à 8, et nous retenons la valeur qui le maximise.
@@ -138,7 +123,7 @@ la distance au cluster voisin le plus proche (séparation). Un score proche
 de 1 indique des clusters bien séparés. Sur nos données (150 articles,
 \texttt{seed=42}), le score est maximal pour $k = 7$ avec un Silhouette
 Score de 0,394.
-\section{Métriques d'évaluation des clusterings}
+\subsection{Métriques d'évaluation des clusterings}
 Pour comparer les algorithmes de façon rigoureuse, nous utilisons trois métriques complémentaires :
 \begin{table}[h]
 \centering
@@ -159,23 +144,76 @@ Temps d'exécution (ms) & $\downarrow$ mieux & Durée du pré-traitement ML. Doi
 \caption{Métriques d'évaluation des algorithmes de clustering}
 \label{tab:metriques}
 \end{table}
-\section{  Résultats et comparaison}
-Les expériences ont été menées sur un
-entrepôt de 200 × 200 unités, 150 articles, seed=42, k=7, sous Python 3.13 /
-scikit-learn. Voici les résultats obtenus :
+\subsection{Résultats et comparaison}
+Les expériences ont été menées sur un entrepôt de 200 × 200 unités, 150 articles, seed=42, k=7, sous Python 3.13 / scikit-learn. Voici les résultats obtenus :
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|c|c|c|c|c|c|}
+\hline
+\rowcolor{gray!40}
+\textbf{Algorithme} & \textbf{k} & \textbf{Silhouette ↑} & \textbf{Davies-Bouldin ↓} & \textbf{Calinski-Harabasz ↑} & \textbf{Bruit} & \textbf{Temps (ms)} \\
+\hline
+\rowcolor{blue!15}
+\textbf{ K-Means} & \textbf{7} & \textcolor{green!60!black}{\textbf{0,394}} & \textbf{0,784} & \textcolor{green!60!black}{\textbf{144,32}} & 0 \% & 45,2 \\
+\hline
+Agglomerative & 7 & 0,383 & \textcolor{green!60!black}{0,732} & 127,46 & 0 \% & \textcolor{red}{112,8} \\
+\hline
+GMM (EM) & 7 & \textcolor{red}{0,325} & \textcolor{red}{0,928} & \textcolor{red}{113,84} & 0 \% & 87,4 \\
+\hline
+DBSCAN & 1 & \textcolor{gray}{N/A} & \textcolor{gray}{N/A} & \textcolor{gray}{N/A} & 0 \% & \textcolor{green!60!black}{5,0} \\
+\hline
+\end{tabular}
+\caption{Comparaison des quatre algorithmes de clustering (150 articles, k=7, seed=42).}
+\label{tab:comparaison}
+\end{table}
+
+K-Means domine sur les deux métriques principales (Silhouette et Calinski-Harabasz) avec un temps d'exécution raisonnable (45 ms). Agglomerative est légèrement en retrait en qualité mais surtout 2,5× plus lent. GMM donne les scores les plus faibles : la distribution gaussienne ne correspond pas aux positions uniformes des articles dans l'entrepôt. DBSCAN échoue complètement (k=1) : la densité homogène de l'entrepôt l'empêche de distinguer des zones distinctes.
+\subsection {Visualisations}
+La figure 1 montre côte à côte les résultats des quatre algorithmes sur les mêmes données. K-Means et Agglomerative produisent 7 zones géographiques claires. GMM donne des frontières floues. DBSCAN regroupe tout en un seul cluster.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{../../ml/fig1_comparaison_clusterings.png}
+    \caption{Comparaison des quatre clusterings sur 150 articles (entrepôt 200×200)}
+    \label{fig:comparaison_clusterings}
+\end{figure}
 
 
+La figure 2 confirme quantitativement ces observations : K-Means est meilleur ou
+équivalent sur toutes les métriques de qualité. DBSCAN, bien que le plus rapide,
+est inutilisable ici.\\\\\\\\
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{../../ml/fig2_metriques_comparaison.png}
+    \caption{Métriques comparatives par algorithme (Silhouette ↑, Davies-Bouldin ↓,
+    Calinski-Harabasz ↑, Temps ↓).}
+    \label{fig:metriques_comparaison}
+\end{figure}
+La figure 3 détaille le clustering K-Means retenu : 7 clusters avec leurs centroïdes
+et la taille de chaque batch. Les clusters sont globalement équilibrés (14 à 30 articles,
+moyenne 21,4), ce qui garantit des sous-TSP de complexité comparable pour la métaheuristique.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{../../ml/fig3_best_clustering_detail.png}
+    \caption{K-Means (k=7) : carte de l'entrepôt avec centroïdes et distribution.}
+    \label{fig:best_clustering}
+\end{figure}
 
+\subsection{Choix de ML - K-Means}
+Au terme de la comparaison, K-Means est retenu pour cinq raisons :
+\begin{itemize}
 
+    \item Meilleure qualité de clustering (Silhouette 0,394 et Calinski-Harabasz 144,32) : les batches sont géographiquement cohérents.
+    \item Résultats reproductibles grâce à la graine aléatoire fixée (seed=42), comme exigé dans le cahier des charges.
+   \item\textbf{Intégration directe :} K-Means fournit nativement des labels et des centroïdes, exactement ce dont la métaheuristique a besoin.
+   \item Pré-traitement rapide (45 ms), négligeable devant le temps de l'ACO/AG.
+   \item \textbf {Cohérence avec la distance de Manhattan :} K-Means minimise la distance euclidienne, très proche de la distance de Manhattan dans un entrepôt à grille orthogonale.
+\end{itemize}
+\subsection{Intégration avec la métaheuristique}
+Le module ML transmet à la métaheuristique un dictionnaire Python structuré contenant : les batches (articles par cluster), les centroïdes, la matrice de distances de Manhattan entre centroïdes, et les coordonnées du dépôt. La métaheuristique n'a donc plus à traiter 150 points d'un seul coup, mais 1 TSP de 7 nœuds + 7 sous-TSP d'environ 21 articles chacun.
 
-
-
-
-
-
-
+\textbf{Gain de complexité :} Sans clustering : 150! permutations. Avec clustering : 7! + 7 × 21! — réduction drastique de l'espace de recherche.
 \chapter{Conclusion}
 La conclusion est la dernière partie du travail écrit (la bibliographie et les annexes n’étant pas considérées comme faisant partie du texte lui-même). Elle est en général organisée comme suit :
             \begin{center}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.3)  3 APR 2026 14:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.3)  3 APR 2026 16:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -180,7 +180,15 @@ File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen167
 \Gin@req@width=\dimen168
-) (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
+) (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count296
+\float@exts=\toks22
+\float@box=\box53
+\@float@everytoks=\toks23
+\@floatcapt=\box54
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
 Package: eso-pic 2025/12/10 v3.0d eso-pic (RN)
 \ESO@tempdima=\dimen169
 \ESO@tempdimb=\dimen170
@@ -207,12 +215,12 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
 Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \col@sep=\dimen171
-\ar@mcellbox=\box53
+\ar@mcellbox=\box55
 \extrarowheight=\dimen172
-\NC@list=\toks22
+\NC@list=\toks24
 \extratabsurround=\skip51
 \backup@length=\skip52
-\ar@cellbox=\box54
+\ar@cellbox=\box56
 )
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
@@ -257,18 +265,18 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count296
+\c@section@level=\count297
 ) (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count297
+\etb@tempcnta=\count298
 )
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
 \@linkdim=\dimen173
-\Hy@linkcounter=\count298
-\Hy@pagecounter=\count299
+\Hy@linkcounter=\count299
+\Hy@pagecounter=\count300
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -277,7 +285,7 @@ Now handling font encoding PD1 ...
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count300
+\Hy@SavedSpaceFactor=\count301
 
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
@@ -291,7 +299,7 @@ Package hyperref Info: Plain pages OFF on input line 4210.
 Package hyperref Info: Backreferencing OFF on input line 4215.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4462.
-\c@Hy@tempcnt=\count301
+\c@Hy@tempcnt=\count302
 
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip17
@@ -308,7 +316,7 @@ y
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count302
+\Fld@menulength=\count303
 \Field@Width=\dimen175
 \Fld@charsize=\dimen176
 Package hyperref Info: Hyper figures OFF on input line 6078.
@@ -318,15 +326,15 @@ Package hyperref Info: backreferencing OFF on input line 6093.
 Package hyperref Info: Link coloring OFF on input line 6098.
 Package hyperref Info: Link coloring with OCG OFF on input line 6103.
 Package hyperref Info: PDF/A mode OFF on input line 6108.
-\Hy@abspage=\count303
-\c@Item=\count304
-\c@Hfootnote=\count305
+\Hy@abspage=\count304
+\c@Item=\count305
+\c@Hfootnote=\count306
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
  (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
 File: hpdftex.def 2025-07-12 v7.01o Hyperref driver for pdfTeX
-\Fld@listcount=\count306
-\c@bookmark@seq@number=\count307
+\Fld@listcount=\count307
+\c@bookmark@seq@number=\count308
 
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfilech
 eck.sty
@@ -351,26 +359,26 @@ MM)
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lastpage\lastpagemodern.st
 y
 Package: lastpagemodern 2025-08-14 v2.1h Refers to last page's name (HMM; JPG)
-\c@lastpagecount=\count308
+\c@lastpagecount=\count309
 ) 
 )) (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
 Package: colortbl 2024/10/29 v1.0k Color table columns (DPC)
-\everycr=\toks23
+\everycr=\toks25
 \minrowclearance=\skip54
-\rownum=\count309
+\rownum=\count310
 )
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
-\lst@mode=\count310
-\lst@gtempboxa=\box55
-\lst@token=\toks24
-\lst@length=\count311
+\lst@mode=\count311
+\lst@gtempboxa=\box57
+\lst@token=\toks26
+\lst@length=\count312
 \lst@currlwidth=\dimen177
-\lst@column=\count312
-\lst@pos=\count313
+\lst@column=\count313
+\lst@pos=\count314
 \lst@lostspace=\dimen178
 \lst@width=\dimen179
-\lst@newlines=\count314
-\lst@lineno=\count315
+\lst@newlines=\count315
+\lst@lineno=\count316
 \lst@maxwidth=\dimen180
 
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
@@ -378,9 +386,9 @@ File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
 )
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
-\c@lstnumber=\count316
-\lst@skipnumbers=\count317
-\lst@framebox=\box56
+\c@lstnumber=\count317
+\lst@skipnumbers=\count318
+\lst@framebox=\box58
 )
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
 File: listings.cfg 2025/11/14 1.11b listings configuration
@@ -411,7 +419,7 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \f@nch@widthL=\skip66
 \f@nch@widthC=\skip67
 \f@nch@widthR=\skip68
-\@temptokenb=\toks25
+\@temptokenb=\toks27
 )
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/nomencl\nomencl.sty
 Package: nomencl 2021/11/10 v5.6 Nomenclature package
@@ -421,10 +429,10 @@ Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.tex
-\XKV@toks=\toks26
-\XKV@tempa@toks=\toks27
+\XKV@toks=\toks28
+\XKV@tempa@toks=\toks29
 )
-\XKV@depth=\count318
+\XKV@depth=\count319
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
@@ -453,7 +461,7 @@ Already applied: [0000/00/00] Usage of raw or classic option list on input line
  370.
 )
 \scr@dte@tocline@numberwidth=\skip69
-\scr@dte@tocline@numbox=\box57
+\scr@dte@tocline@numbox=\box59
 )
 Package tocbasic Info: setting babel extension for `nlo' on input line 187.
 Package tocbasic Info: setting babel extension for `nls' on input line 188.
@@ -461,7 +469,7 @@ Package tocbasic Info: setting babel extension for `nls' on input line 188.
 \nom@tempdim=\dimen182
 \nomitemsep=\skip70
 ))
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 72
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 73
 .
  (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -469,32 +477,32 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex
 .def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count319
+\l__color_backend_stack_int=\count320
 ) (C:/Users\PC\PycharmProjects\Optimisation-combinatoire\out\main.aux
 Package babel Info: 'french' activates 'french' shorthands.
 (babel)             Reported on input line 11.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Info: Redefining \degres on input line 72.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Info: Redefining \degres on input line 73.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -532,17 +540,17 @@ LaTeX Info: Redefining \degres on input line 72.
 
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count320
+\scratchcounter=\count321
 \scratchdimen=\dimen183
-\scratchbox=\box58
-\nofMPsegments=\count321
-\nofMParguments=\count322
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count323
+\scratchbox=\box60
+\nofMPsegments=\count322
+\nofMParguments=\count323
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count324
 \MPscratchDim=\dimen184
-\MPnumerator=\count324
-\makeMPintoPDFobject=\count325
-\everyMPtoPDFconversion=\toks29
+\MPnumerator=\count325
+\makeMPintoPDFobject=\count326
+\everyMPtoPDFconversion=\toks31
 )
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base
 .sty
@@ -553,14 +561,14 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 72.
+Package hyperref Info: Link coloring OFF on input line 73.
  (C:/Users\PC\PycharmProjects\Optimisation-combinatoire\out\main.out)
 (C:/Users\PC\PycharmProjects\Optimisation-combinatoire\out\main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
-\c@lstlisting=\count326
-Package tocbasic Info: setting babel extension for `lol' on input line 72.
+\c@lstlisting=\count327
+Package tocbasic Info: setting babel extension for `lol' on input line 73.
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a4paper
@@ -593,46 +601,46 @@ Package tocbasic Info: setting babel extension for `lol' on input line 72.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<logo_Paris_Nanterre_couleur_RVB.png, id=55, 619.31375pt x 132.495pt>
+<logo_Paris_Nanterre_couleur_RVB.png, id=63, 619.31375pt x 132.495pt>
 File: logo_Paris_Nanterre_couleur_RVB.png Graphic file (type png)
 <use logo_Paris_Nanterre_couleur_RVB.png>
 Package pdftex.def Info: logo_Paris_Nanterre_couleur_RVB.png  used on input lin
-e 73.
+e 74.
 (pdftex.def)             Requested size: 307.2929pt x 65.74391pt.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 7
-3.
+4.
 
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 7
-3.
+4.
 
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-73.
+74.
 
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-73.
+74.
 
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 73.
+(Font)              <12> on input line 74.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 73.
+(Font)              <8> on input line 74.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 73.
-<bordure.png, id=57, 63.23625pt x 522.95375pt>
+(Font)              <6> on input line 74.
+<bordure.png, id=65, 63.23625pt x 522.95375pt>
 File: bordure.png Graphic file (type png)
 <use bordure.png>
-Package pdftex.def Info: bordure.png  used on input line 73.
+Package pdftex.def Info: bordure.png  used on input line 74.
 (pdftex.def)             Requested size: 45.98355pt x 380.2685pt.
  [1
 
@@ -643,7 +651,7 @@ _Paris_Nanterre_couleur_RVB.png>]
 \@nomenclaturefile=\write4
 \openout4 = `main.nlo'.
 
-Package nomencl Info: Writing nomenclature file main.nlo on input line 73.
+Package nomencl Info: Writing nomenclature file main.nlo on input line 74.
  [2
 
 ]
@@ -655,54 +663,104 @@ Package nomencl Info: Writing nomenclature file main.nlo on input line 73.
 
 ]
 Chapitre 1.
-[4
-
-]
-Chapitre 2.
-[5
-
-]
-Chapitre 3.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 9
-8.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 8
+3.
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [6
+)
+Underfull \vbox (badness 7667) has occurred while \output is active []
+
+ [4
 
 {C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}{C:/Us
 ers/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-39.
+24.
 
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 154--154
+Underfull \hbox (badness 10000) in paragraph at lines 139--139
 []|\T1/lmr/m/n/12 Calinski-
  []
 
 
-Underfull \hbox (badness 1975) in paragraph at lines 154--155
+Underfull \hbox (badness 1975) in paragraph at lines 139--140
 []|\T1/lmr/m/n/12 Densité intra-cluster vs dis-per-sion inter-
  []
 
 
-Underfull \hbox (badness 2401) in paragraph at lines 156--156
+Underfull \hbox (badness 2401) in paragraph at lines 141--141
 []|\T1/lmr/m/n/12 Temps d'exé-cu-
  []
 
-[7{C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/U
-sers/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
-Chapitre 4.
-[8
 
-] [9
+Overfull \hbox (118.84157pt too wide) in paragraph at lines 151--166
+ [][] 
+ []
+
+
+Overfull \hbox (4.94801pt too wide) in paragraph at lines 170--171
+[]\T1/lmr/m/n/12 K-Means do-mine sur les deux mé-triques prin-ci-pales (Sil-hou
+ette et Calinski-Harabasz)
+ []
+
+[5{C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/U
+sers/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
+<../../ml/fig1_comparaison_clusterings.png, id=121, 1004.0712pt x 710.655pt>
+File: ../../ml/fig1_comparaison_clusterings.png Graphic file (type png)
+<use ../../ml/fig1_comparaison_clusterings.png>
+Package pdftex.def Info: ../../ml/fig1_comparaison_clusterings.png  used on inp
+ut line 175.
+(pdftex.def)             Requested size: 441.01773pt x 312.13614pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--184
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--184
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--184
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--184
+
+ []
+
+<../../ml/fig2_metriques_comparaison.png, id=122, 1149.093pt x 358.4592pt>
+File: ../../ml/fig2_metriques_comparaison.png Graphic file (type png)
+<use ../../ml/fig2_metriques_comparaison.png>
+Package pdftex.def Info: ../../ml/fig2_metriques_comparaison.png  used on input
+ line 187.
+(pdftex.def)             Requested size: 441.01773pt x 137.57784pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6 <../../ml/fig1_comparaison_clusterings.png>]
+<../../ml/fig3_best_clustering_detail.png, id=130, 1004.0712pt x 427.3566pt>
+File: ../../ml/fig3_best_clustering_detail.png Graphic file (type png)
+<use ../../ml/fig3_best_clustering_detail.png>
+Package pdftex.def Info: ../../ml/fig3_best_clustering_detail.png  used on inpu
+t line 198.
+(pdftex.def)             Requested size: 441.01773pt x 187.70491pt.
+ [7 <../../ml/fig2_metriques_comparaison.png> <../../ml/fig3_best_clustering_de
+tail.png>] [8]
+Chapitre 2.
+[9
 
 ] [10
 
+] [11
+
 ]
-Chapitre 5.
-[11
+Chapitre 3.
+[12
 
 ] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
@@ -712,16 +770,16 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A86AA794598012EC50F654B5D1E89B2A;2147.
+(rerunfilecheck)             Checksum: 133202BF5C8E6BDA2B9FD0BE3F371B56;2577.
  ) 
 Here is how much of TeX's memory you used:
- 15177 strings out of 467870
- 251724 string characters out of 5419808
- 769261 words of memory out of 5000000
- 43787 multiletter control sequences out of 15000+600000
- 669845 words of font info for 63 fonts, out of 8000000 for 9000
+ 15286 strings out of 467870
+ 254214 string characters out of 5419808
+ 778742 words of memory out of 5000000
+ 43888 multiletter control sequences out of 15000+600000
+ 676218 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 115i,13n,110p,803b,514s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 115i,13n,110p,555b,514s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><
 C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:
 /Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Us
@@ -731,9 +789,9 @@ AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/PC/AppD
 ata/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/PC/AppData
 /Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
 Output written on C:/Users\PC\PycharmProjects\Optimisation-combinatoire\out\mai
-n.pdf (11 pages, 246145 bytes).
+n.pdf (12 pages, 670275 bytes).
 PDF statistics:
- 202 PDF objects out of 1000 (max. 8388607)
- 40 named destinations out of 1000 (max. 500000)
- 115 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 229 PDF objects out of 1000 (max. 8388607)
+ 43 named destinations out of 1000 (max. 500000)
+ 146 words of extra memory for PDF output out of 10000 (max. 10000000)
 
