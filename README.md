@@ -1,4 +1,4 @@
-# 📦 Optimisation des tournées en entrepôt : Hybridation du problème du Voyageur de Commerce (TSP) et du Clustering
+#  Optimisation des tournées en entrepôt : Hybridation du problème du Voyageur de Commerce (TSP) et du Clustering
 
 **Projet de Master 1 MIAGE - Optimisation Combinatoire**
 
@@ -6,7 +6,7 @@ Ce projet propose une solution logicielle innovante pour optimiser la préparati
 
 ---
 
-## ✨ Fonctionnalités Principales
+##  Fonctionnalités Principales
 
 * **Environnement Virtuel Modulaire :** Modélisation d'un entrepôt 2D avec génération aléatoire de commandes et calcul des distances de Manhattan.
 * **Pipeline ML Dynamique :** Au lieu d'imposer un seul modèle, le système évalue dynamiquement plusieurs algorithmes de clustering (K-Means, DBSCAN, Gaussian Mixture, Agglomerative) et sélectionne le meilleur selon le score de Silhouette.
@@ -15,7 +15,7 @@ Ce projet propose une solution logicielle innovante pour optimiser la préparati
 
 ---
 
-## 📂 Architecture du Projet
+##  Architecture du Projet
 
 L'architecture respecte le principe de séparation des préoccupations pour garantir un code maintenable et évolutif :
 
@@ -39,7 +39,7 @@ L'architecture respecte le principe de séparation des préoccupations pour gara
 
 ---
 
-## ⚙️ Prérequis et Installation
+##  Prérequis et Installation
 
 Assurez-vous d'avoir Python 3.8+ installé. Les bibliothèques requises pour le fonctionnement du Machine Learning et la génération des graphiques sont les suivantes :
 
@@ -53,7 +53,7 @@ pip install numpy pandas matplotlib scikit-learn
 
 ---
 
-## 🚀 Utilisation
+##  Utilisation
 
 ### 1. Lancer le Pipeline Hybride (Recommandé)
 Ce script exécute le scénario nominal : création de l'entrepôt, sélection du meilleur algorithme de clustering, découpage en lots, et calcul des tournées optimales avec les Colonies de Fourmis.
@@ -78,7 +78,7 @@ python src/metaheuristics/analyze_scaling.py
 
 ---
 
-## 📊 Fichiers de Sortie (Outputs)
+##  Fichiers de Sortie (Outputs)
 
 Lors de l'exécution des scripts principaux, le module `ml` génère automatiquement des fichiers d'analyse :
 * `fig1_comparaison_clusterings.png` : Vue spatiale des clusters selon les différents algorithmes.
@@ -88,7 +88,7 @@ Lors de l'exécution des scripts principaux, le module `ml` génère automatique
 
 ---
 
-## 👥 Équipe du Projet
+##  Équipe du Projet
 
 | Membre | Rôles & Contributions |
 | :--- | :--- |
