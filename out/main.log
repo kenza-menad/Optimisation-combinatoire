@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.3)  3 APR 2026 20:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.3)  3 APR 2026 23:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -663,22 +663,22 @@ Package nomencl Info: Writing nomenclature file main.nlo on input line 74.
 ]
 Chapitre 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--85
+Underfull \hbox (badness 10000) in paragraph at lines 78--84
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--93
+Underfull \hbox (badness 10000) in paragraph at lines 85--92
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--96
+Underfull \hbox (badness 10000) in paragraph at lines 93--95
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--105
+Underfull \hbox (badness 10000) in paragraph at lines 101--104
 
  []
 
@@ -687,7 +687,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 102--105
 {C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]
 Chapitre 2.
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-16.
+15.
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [4
@@ -695,7 +695,7 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 {C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}{C:/Us
 ers/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-57.
+56.
 
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -714,54 +714,45 @@ Underfull \hbox (badness 2401) in paragraph at lines 174--174
 []|\T1/lmr/m/n/12 Temps d'ex�-cu-
  []
 
-
-Overfull \hbox (118.84157pt too wide) in paragraph at lines 184--199
- [][] 
- []
-
 [5{C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}
 pdfTeX warning (ext4): destination with the same identifier (name{table.2.1}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.206 \item \textbf
+l.212 \item \textbf
                    {GMM (Gaussian Mixture Model)} donne les scores les plus ...
 
 pdfTeX warning (ext4): destination with the same identifier (name{table.2.2}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.206 \item \textbf
+l.212 \item \textbf
                    {GMM (Gaussian Mixture Model)} donne les scores les plus ...
 ]
 <../../ml/fig1_comparaison_clusterings.png, id=100, 1004.0712pt x 710.655pt>
 File: ../../ml/fig1_comparaison_clusterings.png Graphic file (type png)
 <use ../../ml/fig1_comparaison_clusterings.png>
 Package pdftex.def Info: ../../ml/fig1_comparaison_clusterings.png  used on inp
-ut line 213.
+ut line 220.
 (pdftex.def)             Requested size: 432.19548pt x 305.89015pt.
 <../../ml/fig2_metriques_comparaison.png, id=101, 1149.093pt x 358.4592pt>
 File: ../../ml/fig2_metriques_comparaison.png Graphic file (type png)
 <use ../../ml/fig2_metriques_comparaison.png>
 Package pdftex.def Info: ../../ml/fig2_metriques_comparaison.png  used on input
- line 220.
+ line 227.
 (pdftex.def)             Requested size: 441.01773pt x 137.57784pt.
  [6
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.224 \end{figure}
+l.231 \end{figure}
                    <../../ml/fig1_comparaison_clusterings.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 232--233
-
- []
-
 <../../ml/fig3_best_clustering_detail.png, id=109, 1004.0712pt x 427.3566pt>
 File: ../../ml/fig3_best_clustering_detail.png Graphic file (type png)
 <use ../../ml/fig3_best_clustering_detail.png>
 Package pdftex.def Info: ../../ml/fig3_best_clustering_detail.png  used on inpu
-t line 238.
+t line 245.
 (pdftex.def)             Requested size: 441.01773pt x 187.70491pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -771,14 +762,14 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.2.2})
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.242 \section
+l.249 \section
               {Intégration avec la métaheuristique} <../../ml/fig2_metriques_
 comparaison.png>] [8
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.3}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.246 \chapter
+l.254 \chapter
               {Conclusion} <../../ml/fig3_best_clustering_detail.png>]
 Chapitre 3.
 [9
@@ -800,11 +791,11 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Here is how much of TeX's memory you used:
  15251 strings out of 467870
  253690 string characters out of 5419808
- 777714 words of memory out of 5000000
+ 778714 words of memory out of 5000000
  43868 multiletter control sequences out of 15000+600000
  665957 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 115i,13n,110p,555b,557s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 115i,13n,110p,543b,555s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><
 C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:
 /Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Us
@@ -813,7 +804,7 @@ PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/PC/
 AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/PC/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
 Output written on C:/Users\PC\PycharmProjects\Optimisation-combinatoire\out\mai
-n.pdf (10 pages, 660319 bytes).
+n.pdf (10 pages, 627906 bytes).
 PDF statistics:
  182 PDF objects out of 1000 (max. 8388607)
  29 named destinations out of 1000 (max. 500000)

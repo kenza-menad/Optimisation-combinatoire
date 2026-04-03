@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
-import matplotlib.gridspec as gridspec
 import pandas as pd
 import time
 import warnings
@@ -10,44 +9,19 @@ warnings.filterwarnings("ignore")
 from sklearn.cluster import KMeans, DBSCAN, AgglomerativeClustering
 from sklearn.mixture import GaussianMixture
 from sklearn.metrics import silhouette_score, davies_bouldin_score, calinski_harabasz_score
-from sklearn.preprocessing import StandardScaler
 
-# Import du warehouse
-import sys
-import os
-sys.path.insert(0, os.path.dirname(__file__))
-
-try:
-    from warehouse_env import WarehouseEnvironment
-    LYNA_MODULE = True
-except ImportError:
-    LYNA_MODULE = False
-    print("[INFO] warehouse_env.py non trouvé — utilisation du générateur interne.")
-
-def _generate_orders_internal(n_points=100, width=200, height=200, seed=42):
-    """Générateur de secours si warehouse_env.py est absent."""
-    rng = np.random.default_rng(seed)
-    x = rng.integers(0, width, size=n_points)
-    y = rng.integers(0, height, size=n_points)
-    return np.column_stack([x, y])
+from src.env.warehouse_env import WarehouseEnvironment
 
 
 def load_data(n_orders=15, items_per_order=(5, 15), seed=42):
-
-    if LYNA_MODULE:
-        env = WarehouseEnvironment(width=200, height=200, depot=(0, 0))
-        orders = env.generate_orders(num_orders=n_orders,
-                                     items_per_order=items_per_order,
-                                     seed=seed)
-        points = env.flatten_orders(orders)
-        depot = np.array(env.depot)
-        print(f"[DATA] Données chargées depuis warehouse_env.py : {len(points)} articles")
-    else:
-        points = _generate_orders_internal(n_points=n_orders * 10, seed=seed)
-        depot = np.array([0, 0])
-        print(f"[DATA] Générateur interne : {len(points)} articles")
+    env = WarehouseEnvironment(width=200, height=200, depot=(0, 0))
+    orders = env.generate_orders(num_orders=n_orders,
+                                 items_per_order=items_per_order,
+                                 seed=seed)
+    points = env.flatten_orders(orders)
+    depot = np.array(env.depot)
+    print(f"[DATA] {len(points)} articles générés.")
     return points, depot
-
 
 #algorithmes à comparer
 
@@ -173,7 +147,8 @@ def select_best(results: dict) -> str:
 
 
 
-COLORS = plt.cm.tab10(np.linspace(0, 1, 12))
+COLORS = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728',
+          '#9467bd', '#8c564b', '#e377c2', '#7f7f7f']
 
 def _plot_single_clustering(ax, points, labels, title, depot):
     unique_labels = sorted(set(labels))
