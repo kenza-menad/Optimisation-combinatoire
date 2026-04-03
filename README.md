@@ -20,21 +20,21 @@ Ce projet propose une solution logicielle innovante pour optimiser la préparati
 L'architecture respecte le principe de séparation des préoccupations pour garantir un code maintenable et évolutif :
 
 ```text
-📦 Optimisation-combinatoire
- ┣ 📂 src
- ┃ ┣ 📂 env
- ┃ ┃ ┗ 📜 warehouse_env.py          # Modélisation de l'entrepôt et des commandes
- ┃ ┣ 📂 metaheuristics
- ┃ ┃ ┣ 📜 aco_solver.py             # Algorithme des Colonies de Fourmis (ACO)
- ┃ ┃ ┣ 📜 genetic_solver.py         # Algorithme Génétique (AG)
- ┃ ┃ ┣ 📜 baseline.py               # Algorithme Glouton (Plus Proche Voisin)
- ┃ ┃ ┗ 📜 analyze_scaling.py        # Analyse des limites (Scalability)
- ┃ ┣ 📂 ml
- ┃ ┃ ┗ 📜 compare_algorithms.py     # Pipeline de clustering dynamique et évaluation
- ┃ ┣ 📜 main.py                     # Point d'entrée : Exécution du pipeline hybride
- ┃ ┗ 📜 compare_pipelines.py        # Point d'entrée : Comparaison globale (ACO vs AG)
- ┣ 📂 Template latex memoire M1     # Fichiers de rédaction du rapport final
- ┗ 📜 README.md                     # Documentation du projet
+ Optimisation-combinatoire
+ ┣  src
+ ┃ ┣  env
+ ┃ ┃ ┗  warehouse_env.py          # Modélisation de l'entrepôt et des commandes
+ ┃ ┣  metaheuristics
+ ┃ ┃ ┣  aco_solver.py             # Algorithme des Colonies de Fourmis (ACO)
+ ┃ ┃ ┣  genetic_solver.py         # Algorithme Génétique (AG)
+ ┃ ┃ ┣  baseline.py               # Algorithme Glouton (Plus Proche Voisin)
+ ┃ ┃ ┗  analyze_scaling.py        # Analyse des limites (Scalability)
+ ┃ ┣  ml
+ ┃ ┃ ┗  compare_algorithms.py     # Pipeline de clustering dynamique et évaluation
+ ┃ ┣  main.py                     # Point d'entrée : Exécution du pipeline hybride
+ ┃ ┗  compare_pipelines.py        # Point d'entrée : Comparaison globale (ACO vs AG)
+ ┣  Template latex memoire M1     # Fichiers de rédaction du rapport final
+ ┗  README.md                     # Documentation du projet
 ```
 
 ---
@@ -86,8 +86,6 @@ Lors de l'exécution des scripts principaux, le module `ml` génère automatique
 * `fig3_best_clustering_detail.png` : Focus sur l'algorithme gagnant et la distribution des charges.
 * `tableau_comparaison_ml.csv` : Données brutes des métriques d'évaluation.
 
-*(Note : Il est recommandé d'ajouter `*.png` et `*.csv` à votre fichier `.gitignore` pour ne pas surcharger le dépôt).*
-
 ---
 
 ## 👥 Équipe du Projet
@@ -95,7 +93,7 @@ Lors de l'exécution des scripts principaux, le module `ml` génère automatique
 | Membre | Rôles & Contributions |
 | :--- | :--- |
 | **Lyna** | Modélisation de l'environnement (Warehouse Environment), Algorithme Glouton (Baseline), Algorithme Génétique & Intégration globale |
-| **Kenza** | Pipeline de Machine Learning dynamique & Analyse des métriques |
+| **Kenza** | Comparaison de 4 algorithmes de clustering (K-Means, Agglomerative, GMM, DBSCAN), évaluation avec 3 métriques et génération des figures comparatives et export des résultats vers la métaheuristique|
 | **Dyhia** | Métaheuristiques (Ant Colony Optimization) |
 
 *Projet réalisé dans le cadre de la formation Master 1 MIAGE.*
