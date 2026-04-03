@@ -2,10 +2,9 @@ import numpy as np
 import time
 
 from src.env.warehouse_env import WarehouseEnvironment
-from src.kmeans_clustering import apply_kmeans, batch_orders_by_cluster
 from src.metaheuristics.aco_solver import AntColonyOptimizer
-# 👇 On importe ton nouvel algorithme !
 from src.metaheuristics.genetic_solver import GeneticAlgorithmSolver
+from src.ml.compare_algorithms import run_full_pipeline
 
 
 def run_ultimate_comparison():
@@ -13,16 +12,21 @@ def run_ultimate_comparison():
     print(" ⚔️ LE GRAND AFFRONTEMENT : ACO vs ALGORYTHME GÉNÉTIQUE")
     print("=" * 70)
 
-    # --- 1. GÉNÉRATION DES DONNÉES ---
-    env = WarehouseEnvironment(width=100, height=100, depot=(0, 0))
-    orders = env.generate_orders(num_orders=15, items_per_order=(3, 6))
+    # --- 1. GÉNÉRATION DES DONNÉES & MACHINE LEARNING ---
+    print("\n🧠 Lancement du pipeline dynamique de Clustering (Kenza)...")
+    # Au lieu de générer l'environnement à la main, on laisse le pipeline s'en charger
+    # Il va tester tous les algos (K-Means, DBSCAN...) et garder le meilleur !
+    payload, best_algo, df = run_full_pipeline(n_orders=15, items_per_order=(3, 6), seed=42)
 
-    all_points = []
-    for order in orders:
-        all_points.extend(order)
-    all_points = np.array(all_points)
+    batches = payload["batches"]
+    depot_array = payload["depot"]
 
-    print(f"📦 Total : {len(all_points)} articles à collecter.\n")
+    # On recrée un environnement juste pour utiliser sa méthode calculate_distance
+    env = WarehouseEnvironment(width=100, height=100, depot=tuple(depot_array))
+
+    # On rassemble tous les points générés pour l'Approche A (sans ML)
+    all_points = np.vstack(list(batches.values()))
+    print(f"\n📦 Total : {len(all_points)} articles à collecter répartis par {best_algo}.\n")
 
     # =========================================================
     # APPROCHE A : ACO CLASSIQUE (Sans ML)
@@ -30,7 +34,7 @@ def run_ultimate_comparison():
     print("=" * 70)
     print(" [APPROCHE A] ACO Standard (1 seule grande tournée, sans ML)")
     print("=" * 70)
-    points_a_visiter_complet = [env.depot] + all_points.tolist()
+    points_a_visiter_complet = [env.depot] + [tuple(p) for p in all_points]
     num_points_total = len(points_a_visiter_complet)
 
     matrice_distance_complete = np.zeros((num_points_total, num_points_total))
@@ -48,26 +52,21 @@ def run_ultimate_comparison():
     print(f"✅ Distance totale : {dist_A:.1f} unités")
     print(f"⏱️ Temps de calcul : {fin_A - debut_A:.2f} secondes\n")
 
-    # --- PRÉPARATION DU MACHINE LEARNING (Commun à B et C) ---
-    print("🧠 Application du K-Means (Kenza) pour préparer les lots...\n")
-    k_optimal = 4
-    kmeans_model, labels = apply_kmeans(all_points, k=k_optimal)
-    batches = batch_orders_by_cluster(orders, all_points, labels, k=k_optimal)
-
     # =========================================================
     # APPROCHE B : ACO HYBRIDE (Fourmis + ML)
     # =========================================================
     print("=" * 70)
-    print(" [APPROCHE B] ACO Hybride (Fourmis sur clusters)")
+    print(f" [APPROCHE B] ACO Hybride (Fourmis sur clusters {best_algo})")
     print("=" * 70)
     optimizer_aco = AntColonyOptimizer(num_ants=10, num_iterations=40)
     dist_B = 0.0
     debut_B = time.time()
 
-    for cluster_id, cluster_orders in batches.items():
-        if not cluster_orders: continue
-        articles_du_lot = [item for order in cluster_orders for item in order]
-        points_cluster = [env.depot] + articles_du_lot
+    for cluster_id, batch_pts in batches.items():
+        if len(batch_pts) == 0: continue
+
+        # Beaucoup plus simple qu'avant : on prend juste les points du cluster !
+        points_cluster = [env.depot] + [tuple(p) for p in batch_pts]
         num_points = len(points_cluster)
 
         matrice_cluster = np.zeros((num_points, num_points))
@@ -86,17 +85,16 @@ def run_ultimate_comparison():
     # APPROCHE C : AG HYBRIDE (Génétique + ML)
     # =========================================================
     print("=" * 70)
-    print(" [APPROCHE C] Algorithme Génétique Hybride (ADN sur clusters)")
+    print(f" [APPROCHE C] Algorithme Génétique Hybride (ADN sur clusters {best_algo})")
     print("=" * 70)
-    # On initialise l'AG avec une population de 20 et 50 générations
     optimizer_ag = GeneticAlgorithmSolver(population_size=20, generations=50, mutation_rate=0.1)
     dist_C = 0.0
     debut_C = time.time()
 
-    for cluster_id, cluster_orders in batches.items():
-        if not cluster_orders: continue
-        articles_du_lot = [item for order in cluster_orders for item in order]
-        points_cluster = [env.depot] + articles_du_lot
+    for cluster_id, batch_pts in batches.items():
+        if len(batch_pts) == 0: continue
+
+        points_cluster = [env.depot] + [tuple(p) for p in batch_pts]
         num_points = len(points_cluster)
 
         matrice_cluster = np.zeros((num_points, num_points))

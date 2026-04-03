@@ -3,8 +3,10 @@ import time
 
 # Imports de votre équipe
 from src.env.warehouse_env import WarehouseEnvironment
-from src.kmeans_clustering import apply_kmeans, batch_orders_by_cluster, find_optimal_k
 from src.metaheuristics.aco_solver import AntColonyOptimizer
+
+# 👇 Le pipeline de Kenza
+from src.ml.compare_algorithms import run_full_pipeline
 
 
 def run_hybrid_pipeline():
@@ -13,34 +15,21 @@ def run_hybrid_pipeline():
     print("=" * 60)
 
     # ---------------------------------------------------------
-    # ÉTAPE 1 : L'ENVIRONNEMENT (Lyna)
+    # ÉTAPE 1 & 2 : ENVIRONNEMENT + MACHINE LEARNING
     # ---------------------------------------------------------
-    print("\n[1/3] Génération de l'environnement et des commandes...")
-    env = WarehouseEnvironment(width=100, height=100, depot=(0, 0))
+    print("\n[1/2] Génération de l'environnement & Regroupement intelligent...")
+    # On laisse le script de Kenza générer les commandes et trouver le meilleur algorithme
+    payload, best_algo, df = run_full_pipeline(n_orders=15, items_per_order=(3, 6), seed=42)
 
-    # On génère 15 commandes contenant chacune entre 3 et 6 articles
-    orders = env.generate_orders(num_orders=15, items_per_order=(3, 6))
+    batches = payload["batches"]
+    depot_array = payload["depot"]
 
-    # Petite sécurité : si Lyna n'a pas encore codé flatten_orders, on le fait ici
-    all_points = []
-    for order in orders:
-        all_points.extend(order)
-    all_points = np.array(all_points)
+    # On récupère l'environnement de base pour la distance
+    env = WarehouseEnvironment(width=100, height=100, depot=tuple(depot_array))
 
-    print(f"      Total : {len(orders)} commandes générées, représentant {len(all_points)} articles à collecter.")
-
-    # ---------------------------------------------------------
-    # ÉTAPE 2 : LE MACHINE LEARNING (Kenza)
-    # ---------------------------------------------------------
-    print("\n[2/3] Regroupement intelligent avec K-Means...")
-    # On fixe un K=4 pour le test (ou tu peux utiliser sa fonction find_optimal_k)
-    k_optimal = 4
-    print(f"      Application du K-Means pour créer {k_optimal} zones de collecte (clusters)...")
-
-    kmeans_model, labels = apply_kmeans(all_points, k=k_optimal)
-
-    # On utilise la super fonction de Kenza pour regrouper les commandes
-    batches = batch_orders_by_cluster(orders, all_points, labels, k=k_optimal)
+    total_articles = sum(len(pts) for pts in batches.values())
+    print(f"      Total : {total_articles} articles à collecter.")
+    print(f"      L'algorithme vainqueur est : {best_algo}. Création de {payload['n_clusters']} zones de collecte...")
 
     # ---------------------------------------------------------
     # ÉTAPE 3 : L'OPTIMISATION (Dyhia)
@@ -51,18 +40,12 @@ def run_hybrid_pipeline():
     distance_totale_globale = 0.0
     temps_debut = time.time()
 
-    # On lance tes fourmis sur chaque "Lot" (Cluster) préparé par Kenza
-    for cluster_id, cluster_orders in batches.items():
-        if not cluster_orders:
-            continue  # Si un cluster est vide, on passe au suivant
-
-        # On extrait tous les articles de ce lot
-        articles_du_lot = []
-        for order in cluster_orders:
-            articles_du_lot.extend(order)
+    # On lance les fourmis sur chaque "Lot" (Cluster)
+    for cluster_id, batch_pts in batches.items():
+        if len(batch_pts) == 0: continue
 
         # On ajoute le dépôt (0,0) au tout début du trajet !
-        points_a_visiter = [env.depot] + articles_du_lot
+        points_a_visiter = [env.depot] + [tuple(p) for p in batch_pts]
         num_points = len(points_a_visiter)
 
         # Calcul de la matrice des distances pour CE cluster
@@ -71,7 +54,7 @@ def run_hybrid_pipeline():
             for k in range(num_points):
                 matrice_distance[j][k] = env.calculate_distance(points_a_visiter[j], points_a_visiter[k])
 
-        # 🐜 Tes fourmis entrent en action !
+        # 🐜 Les fourmis entrent en action !
         print(f"      -> Résolution du Cluster {cluster_id + 1} ({num_points - 1} articles)... ", end="")
         chemin, dist = optimizer.solve(points_a_visiter, matrice_distance)
         print(f"Terminé ! Distance = {dist:.1f}")

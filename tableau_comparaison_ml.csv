@@ -1,0 +1,5 @@
+Algorithme,k trouvé,Silhouette ↑,Davies-Bouldin ↓,Calinski-Harabasz ↑,Bruit (%),Temps (ms)
+★ K-Means,7,0.394,0.7836,144.32,0.0,31.33
+  Agglomerative,7,0.3832,0.732,127.46,0.0,19.68
+  GMM (EM),7,0.3246,0.9278,113.84,0.0,35.49
+  DBSCAN,1,N/A,N/A,N/A,0.0,3.11
