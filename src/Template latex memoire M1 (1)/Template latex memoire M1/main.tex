@@ -3,19 +3,19 @@
 \usepackage[T1]{fontenc}		
 
 \usepackage[french]{babel}
-
 \usepackage{lmodern}
+
 \usepackage[top=2.5cm, bottom=2cm,
 			left=3cm, right=2.5cm,
 			headheight=15pt]{geometry}
 \usepackage{graphicx}
-\usepackage{float}
 \usepackage{eso-pic}	% Nécessaire pour mettre des images en arrière plan
-\usepackage{array} 
+\usepackage{array}
 \usepackage{hyperref}
 \usepackage{lastpage}
 \usepackage{colortbl}
 \usepackage[table]{xcolor}
+\usepackage{float}
 \definecolor{bleuleger}{RGB}{0,0,200}
 
 
@@ -72,16 +72,15 @@ Commerce (TSP) et du Clustering}
 %\SetWatermarkColor{red!20}
 \begin{document}
 \pagedegarde
-
 \tableofcontents
-
 \chapter{Introduction}
 
 
 \chapter{Intégration du Machine Learning}
+
 Notre problème consiste à minimiser la distance parcourue par un préparateur de commandes dans un entrepôt de 200 × 200 unités, avec entre 75 et 150 articles à collecter. Si on soumet directement ces points à une métaheuristique (ACO ou algorithme génétique), on obtient un TSP de grande taille : l'espace de recherche explose (150! permutations possibles) et la convergence est très lente.
 
-Notre solution : utiliser le Machine Learning en amont pour regrouper les articles géographiquement proches en batches. Chaque batch devient alors un sous-TSP de petite taille, que la métaheuristique résout rapidement. C'est l'idée centrale de notre approche hybride ML + métaheuristique.
+Notre solution : utiliser le Machine Learning en amont pour regrouper les articles géographiquement proches en batches. Chaque batch devient alors un sous-TSP de petite taille, que la métaheuristique résout rapidement.
 
 \section{Les algorithmes de clustering évalués}
 Le clustering est une méthode d'apprentissage non supervisé : elle regroupe des données en groupes homogènes (clusters) sans étiquette préalable. Ici, chaque point est la coordonnée (x, y) d'un article. Nous avons comparé quatre algorithmes de familles différentes :
@@ -166,21 +165,21 @@ DBSCAN & 1 & \textcolor{gray}{N/A} & \textcolor{gray}{N/A} & \textcolor{gray}{N/
 \label{tab:comparaison}
 \end{table}
 
-K-Means domine sur les deux métriques principales (Silhouette et Calinski-Harabasz) avec un temps d'exécution raisonnable (45 ms). Agglomerative est légèrement en retrait en qualité mais surtout 2,5× plus lent. GMM donne les scores les plus faibles : la distribution gaussienne ne correspond pas aux positions uniformes des articles dans l'entrepôt. DBSCAN échoue complètement (k=1) : la densité homogène de l'entrepôt l'empêche de distinguer des zones distinctes.
-\section {Visualisations}
-La figure 1 montre côte à côte les résultats des quatre algorithmes sur les mêmes données. K-Means et Agglomerative produisent 7 zones géographiques claires. GMM donne des frontières floues. DBSCAN regroupe tout en un seul cluster.
+\begin{itemize}
+\item \textbf{K-Means} obtient le meilleur Silhouette Score (0,394) et le meilleur Calinski-Harabasz (144,32), confirmant que ses clusters sont à la fois compacts et bien séparés géographiquement. Son temps d'exécution de 45,2 ms est raisonnable et son partitionnement est déterministe (grâce à la graine aléatoire fixée). C'est l'algorithme retenu pour notre pipeline.
+\item \textbf{Agglomerative Clustering} présente le meilleur Davies-Bouldin (0,732), ce qui signifie que ses clusters sont plus compacts en termes de dispersion interne. Cependant, son temps d'exécution est 2,5 fois plus élevé que K-Means (112,8 ms) pour un gain de Silhouette négligeable ($-$0,011). Dans notre contexte où le pré-traitement doit être rapide, ce rapport coût/bénéfice est défavorable.
+\item \textbf{GMM (Gaussian Mixture Model)} donne les scores les plus faibles sur toutes les métriques de qualité (Silhouette 0,325, Davies-Bouldin 0,928, Calinski-Harabasz 113,84). Cela s'explique par le fait que le modèle gaussien n'est pas adapté à une distribution spatiale uniforme : les articles sont répartis aléatoirement dans l'entrepôt et ne suivent pas naturellement des distributions elliptiques gaussiennes.
+\item \textbf{DBSCAN a échoué dans cette configuration :} il n'a trouvé qu'un seul cluster (k=1), regroupant tous les articles en un seul batch, ce qui rend son utilisation impossible pour notre pipeline. Ce résultat illustre une limitation connue de DBSCAN : sa sensibilité au paramètre eps. Avec une distribution uniforme des articles, la densité est homogène sur tout l'entrepôt, rendant difficile la détection de zones denses distinctes.
+\end{itemize}
+\section{Visualisations}
+La figure 1 montre côte à côte les résultats des quatre algorithmes sur les mêmes données. Pour K-Means et Agglomerative, on observe 7 zones géographiquement cohérentes. Pour GMM, les frontières entre clusters sont moins nettes, ce qui se reflète dans le Silhouette Score plus bas. DBSCAN regroupe tout en un seul cluster (bleu clair), ce qui confirme l'échec de l'algorithme.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\linewidth]{../../ml/fig1_comparaison_clusterings.png}
-    \caption{Comparaison des quatre clusterings sur 150 articles (entrepôt 200×200)}
+    \includegraphics[width=0.98\linewidth]{../../ml/fig1_comparaison_clusterings.png}
+    \caption{Comparaison des quatre clusterings sur 150 articles (entrepôt 200×200).}
     \label{fig:comparaison_clusterings}
 \end{figure}
-
-
-La figure 2 confirme quantitativement ces observations : K-Means est meilleur ou
-équivalent sur toutes les métriques de qualité. DBSCAN, bien que le plus rapide,
-est inutilisable ici.\\\\\\\\
-
+La figure 2 montre que K-Means domine sur les métriques de qualité (Silhouette et Calinski-Harabasz), tout en maintenant un temps d'exécution modéré. DBSCAN apparaît comme le plus rapide (5 ms), mais ses métriques de qualité sont toutes à N/A, ce qui le disqualifie.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{../../ml/fig2_metriques_comparaison.png}
@@ -188,30 +187,25 @@ est inutilisable ici.\\\\\\\\
     Calinski-Harabasz ↑, Temps ↓).}
     \label{fig:metriques_comparaison}
 \end{figure}
-La figure 3 détaille le clustering K-Means retenu : 7 clusters avec leurs centroïdes
-et la taille de chaque batch. Les clusters sont globalement équilibrés (14 à 30 articles,
-moyenne 21,4), ce qui garantit des sous-TSP de complexité comparable pour la métaheuristique.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\linewidth]{../../ml/fig3_best_clustering_detail.png}
-    \caption{K-Means (k=7) : carte de l'entrepôt avec centroïdes et distribution.}
-    \label{fig:best_clustering}
-\end{figure}
-
 \section{Choix de ML - K-Means}
 Au terme de la comparaison, K-Means est retenu pour cinq raisons :
 \begin{itemize}
-
     \item Meilleure qualité de clustering (Silhouette 0,394 et Calinski-Harabasz 144,32) : les batches sont géographiquement cohérents.
     \item Résultats reproductibles grâce à la graine aléatoire fixée (seed=42), comme exigé dans le cahier des charges.
    \item\textbf{Intégration directe :} K-Means fournit nativement des labels et des centroïdes, exactement ce dont la métaheuristique a besoin.
    \item Pré-traitement rapide (45 ms), négligeable devant le temps de l'ACO/AG.
-   \item \textbf {Cohérence avec la distance de Manhattan :} K-Means minimise la distance euclidienne, très proche de la distance de Manhattan dans un entrepôt à grille orthogonale.
+   \item \textbf {Cohérence avec la distance de Manhattan :} K-Means minimise la distance euclidienne, très proche de la distance de Manhattan dans un entrepôt à grille orthogonale.\\
 \end{itemize}
+\space La figure 3 présente en détail le clustering K-Means retenu. À gauche, la carte de l'entrepôt montre les 7 clusters avec leurs centroïdes et le nombre d'articles par cluster entre parenthèses. À droite, le diagramme en barres montre la distribution des tailles de clusters, avec la moyenne (21,4 articles par batch) matérialisée par la ligne pointillée rouge.
+On observe que les clusters sont globalement équilibrés (de 14 à 30 articles), ce qui est favorable pour la métaheuristique : des batches de taille similaire garantissent des sous-TSP comparables en complexité, évitant qu'un seul batch ne concentre l'essentiel de la distance totale parcourue. Le cluster C0 (30 articles) est légèrement sur-représenté, ce qui pourrait être optimisé en ajustant k ou en ajoutant une contrainte de taille dans le clustering.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{../../ml/fig3_best_clustering_detail.png}
+    \caption{K-Means (k=7) : carte de l'entrepôt avec centroïdes et distribution des tailles de clusters.}
+    \label{fig:best_clustering}
+\end{figure}
 \section{Intégration avec la métaheuristique}
 Le module ML transmet à la métaheuristique un dictionnaire Python structuré contenant : les batches (articles par cluster), les centroïdes, la matrice de distances de Manhattan entre centroïdes, et les coordonnées du dépôt. La métaheuristique n'a donc plus à traiter 150 points d'un seul coup, mais 1 TSP de 7 nœuds + 7 sous-TSP d'environ 21 articles chacun.
-
 \textbf{Gain de complexité :} Sans clustering : 150! permutations. Avec clustering : 7! + 7 × 21! — réduction drastique de l'espace de recherche.
 \chapter{Conclusion}
 La conclusion est la dernière partie du travail écrit (la bibliographie et les annexes n’étant pas considérées comme faisant partie du texte lui-même). Elle est en général organisée comme suit :
