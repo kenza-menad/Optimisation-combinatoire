@@ -10,10 +10,10 @@
   \def\@ecole{#1}
 }
 
-\def\@entreprise{Nom de l'entreprise}
-\newcommand{\entreprise}[1]{
-  \def\@entreprise{#1}
-}
+%\def\@entreprise{Nom de l'entreprise}
+%\newcommand{\entreprise}[1]{
+ % \def\@entreprise{#1}
+%}
 
 \def\@datedebut{\today}
 \newcommand{\datedebut}[1]{
@@ -53,10 +53,10 @@
   \def\@directeur{#1}
 }
 
-\def\@fonction{Développeur }
-\newcommand{\fonction}[1]{
-  \def\@fonction{#1}
-}
+%\def\@fonction{Développeur }
+%\newcommand{\fonction}[1]{
+ % \def\@fonction{#1}
+%}
 
 \def\@encadrant{encadrant}
 \newcommand{\encadrant}[1]{
@@ -112,9 +112,9 @@
 	\put(0,0){%
 		\parbox[t][\paperheight]{\paperwidth}{%
 			\hfill
-			%\colorbox{blue}{		
+			%\colorbox{blue}{
 				\begin{minipage}[b]{2em}
-					\includegraphics[width=4.0\textwidth]{logo_miage.png}\\					
+					\includegraphics[width=4.0\textwidth]{logo_miage.png}\\
 					%\centering\Huge\textcolor{white}{M\\I\\A\\G\\E\\}
 					\vspace{0.2cm}
 				\end{minipage}
@@ -132,28 +132,29 @@
   \centering
       \includegraphics[width=0.6\textwidth]{logo_Paris_Nanterre_couleur_RVB.png}
       \hfill
-      \includegraphics[width=0.20\textwidth]{logo_entreprise.png}\\
+     % \includegraphics[width=0.20\textwidth]{logo_entreprise.png}\\
     \vspace{1cm}
-     % {\Large Licence MIASHS parcours MIAGE}\\
+
+     %{\Large Licence MIASHS parcours MIAGE}\\
     \vspace{1cm}
-      {\huge 
-      	{\bfseries Mémoire de M1}\\
+      {\huge
+      	{\bfseries Projet Optimisation Combinatoire }\\
     \vspace{0.5cm}}
-      	Master MIAGE (Mixte)\\
+      	Master 1 MIAGE (Mixte)\\
     \vspace{1cm}
-   		
+
     \vspace{1cm}
     	{\huge\color[rgb]{0,0,1} \bfseries{\@title}}\\
     \vspace{0.5cm}
-    {\bfseries Entreprise d'accueil : \@entreprise}\\
-    {\bfseries Mémoire réalisé du \@datedebut\ au \@datefin}\\
+
+    {\bfseries Rapport réalisé du \@datedebut\ au \@datefin}\\
     %	{\Large{\bfseries Spécialité doctorale ``\@specialite''}}\\
     \vspace{2cm}
-    	\textit{présenté et soutenu par}\\
+    	\textit{présenté  par}\\
     \vspace{0.5cm}
     	{\Large {\bfseries \@author}} \\
     \vspace{0.5cm}
-    	le \@date \\
+    	%le \@date \\
     \vfill
      %  {\LARGE \color[rgb]{0,0,1} \bfseries{\@title}} \\
     %\vfill
@@ -161,7 +162,7 @@
        % Co-encadrant de thèse : {\bfseries \@encadrant}\\
     %\vfill
 	\begin{tabular}{>{\bfseries}lll}
-		\large Jury de la soutenance\\
+		%\large Jury de la soutenance\\
 		\vspace{0.15cm}\\
 		\@jurya
 		\@juryb
@@ -175,24 +176,22 @@
 	\end{tabular}
 	%\includegraphics[width=0.20\textwidth]{logo_entreprise.png}\
 	\vfill
-	
+
 	%\@adresse
   \end{titlepage}
 
 
 
 
-\restoregeometry  
+\restoregeometry
 \makenomenclature
 
 \pagestyle{fancy}
 
 \renewcommand\headrulewidth{1pt}
 
-\fancyhead[L]{\@fonction}
-
-\fancyhead[R]{\@entreprise}
-
+\fancyhead[L]{}
+\fancyhead[R]{}'
 
 \renewcommand\footrulewidth{1pt}
 

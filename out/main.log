@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.3)  3 APR 2026 14:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.3)  3 APR 2026 14:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -599,11 +599,6 @@ File: logo_Paris_Nanterre_couleur_RVB.png Graphic file (type png)
 Package pdftex.def Info: logo_Paris_Nanterre_couleur_RVB.png  used on input lin
 e 73.
 (pdftex.def)             Requested size: 307.2929pt x 65.74391pt.
-<logo_entreprise.png, id=57, 224.84pt x 225.84375pt>
-File: logo_entreprise.png Graphic file (type png)
-<use logo_entreprise.png>
-Package pdftex.def Info: logo_entreprise.png  used on input line 73.
-(pdftex.def)             Requested size: 102.42836pt x 102.88657pt.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 7
 3.
 
@@ -634,7 +629,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 73.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 73.
-<bordure.png, id=58, 63.23625pt x 522.95375pt>
+<bordure.png, id=57, 63.23625pt x 522.95375pt>
 File: bordure.png Graphic file (type png)
 <use bordure.png>
 Package pdftex.def Info: bordure.png  used on input line 73.
@@ -644,26 +639,27 @@ Package pdftex.def Info: bordure.png  used on input line 73.
 
 {C:/Users/PC/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/PC/AppD
 ata/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./bordure.png> <./logo
-_Paris_Nanterre_couleur_RVB.png> <./logo_entreprise.png>]
+_Paris_Nanterre_couleur_RVB.png>]
 \@nomenclaturefile=\write4
 \openout4 = `main.nlo'.
 
 Package nomencl Info: Writing nomenclature file main.nlo on input line 73.
+ [2
 
+]
 (C:/Users\PC\PycharmProjects\Optimisation-combinatoire\out\main.toc)
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [2
-
+ [3
 
 ]
 Chapitre 1.
-[3
+[4
 
 ]
 Chapitre 2.
-[4
+[5
 
 ]
 Chapitre 3.
@@ -671,7 +667,7 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 9
 8.
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [5
+) [6
 
 {C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}{C:/Us
 ers/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}]
@@ -695,18 +691,18 @@ Underfull \hbox (badness 2401) in paragraph at lines 156--156
 []|\T1/lmr/m/n/12 Temps d'exé-cu-
  []
 
-[6{C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/U
+[7{C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/U
 sers/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
 Chapitre 4.
-[7
-
-] [8
+[8
 
 ] [9
 
+] [10
+
 ]
 Chapitre 5.
-[10
+[11
 
 ] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
@@ -719,13 +715,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: A86AA794598012EC50F654B5D1E89B2A;2147.
  ) 
 Here is how much of TeX's memory you used:
- 15188 strings out of 467870
- 251952 string characters out of 5419808
+ 15177 strings out of 467870
+ 251724 string characters out of 5419808
  769261 words of memory out of 5000000
- 43799 multiletter control sequences out of 15000+600000
- 672843 words of font info for 64 fonts, out of 8000000 for 9000
+ 43787 multiletter control sequences out of 15000+600000
+ 669845 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 115i,13n,110p,803b,512s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 115i,13n,110p,803b,514s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><
 C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:
 /Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Us
@@ -735,9 +731,9 @@ AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/PC/AppD
 ata/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/PC/AppData
 /Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
 Output written on C:/Users\PC\PycharmProjects\Optimisation-combinatoire\out\mai
-n.pdf (10 pages, 250029 bytes).
+n.pdf (11 pages, 246145 bytes).
 PDF statistics:
- 199 PDF objects out of 1000 (max. 8388607)
- 39 named destinations out of 1000 (max. 500000)
- 120 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 202 PDF objects out of 1000 (max. 8388607)
+ 40 named destinations out of 1000 (max. 500000)
+ 115 words of extra memory for PDF output out of 10000 (max. 10000000)
 
