@@ -1,0 +1,214 @@
+\documentclass[a4paper, 12pt, twoside]{report}
+\usepackage[utf8]{inputenc}		% LaTeX, comprend les accents !
+\usepackage[T1]{fontenc}		
+
+\usepackage[french]{babel}
+
+\usepackage{lmodern}
+\usepackage[top=2.5cm, bottom=2cm,
+			left=3cm, right=2.5cm,
+			headheight=15pt]{geometry}
+\usepackage{graphicx}
+\usepackage{eso-pic}	% Nécessaire pour mettre des images en arrière plan
+\usepackage{array} 
+\usepackage{hyperref}
+\usepackage{lastpage}
+\usepackage{colortbl}
+\usepackage[table]{xcolor}
+\definecolor{bleuleger}{RGB}{0,0,200}
+
+
+\usepackage{listings}
+\lstnewenvironment{codeC}[1][]
+{%
+	\lstset{language=C,
+		frame=single,
+		captionpos=b,
+		backgroundcolor=\color{bleuleger!5},
+		basicstyle=\ttfamily\tiny,
+		numbers=left,
+		numberstyle=\color{black},
+		numbersep=5pt,
+		breaklines=true,
+		tabsize=4,
+		keywordstyle=\bfseries\color{green!40!black},
+		stringstyle=\color{red}\ttfamily,
+		identifierstyle=\color{blue},
+		caption={[#1]{#1}},
+		commentstyle=\color{purple!40!black}}
+}
+{}
+\input{pagedegarde}
+
+
+\author{Kenza MENAD, Lyna BAOUCHE, Dyhia SELLAH}
+\title{Optimisation des tournées en entrepôt : Hybridation du problème du Voyageur de
+Commerce (TSP) et du Clustering}
+%\entreprise{Le nom de votre entreprise}
+%\fonction{Votre fonction}
+\datedebut{Mars 2026}
+\datefin{Avril 2026}
+
+
+ %\jurya{Mme. Marta Rukoz}{Professeur des universités}{Responsable du master}
+
+%\juryb{Mme. Prénom Nom}{Titre de votre tuteur enseignant}{Tuteur enseignant}
+%Le titre de votre enseignant référent est soit Maître de conférences, soit Professeur des universités. Si vous aves un doute, demandez moi.
+
+%\juryc{M. Prénom Nom}{Poste de votre maître d'apprentissage}{Maître d'apprentissage}
+%Demandez à votre maître de stage quel est son poste. Par exemple, directeur du système d'information, chef de projet, responsable d'équipe etc...
+
+%\juryd{M. Prénom Nom}{poste de votre maître de stage}{Maître de stage}
+%Ajouter le juryd si votre maître de stage viens accompagné d'un collègue.
+
+
+
+
+%\usepackage[firstpage]{draftwatermark}
+%\usepackage{tcolorbox}
+%\SetWatermarkText{Confidentiel}
+%\SetWatermarkScale{0.9}
+%\SetWatermarkColor{red!20}
+\begin{document}
+\pagedegarde
+
+\tableofcontents
+
+\chapter{Introduction}
+L'introduction est la première section de votre mémoire scientifique et elle sert à présenter votre travail au lecteur. Elle doit énoncer clairement l'objectif de votre recherche, mettre en contexte votre étude et présenter brièvement les principales questions que vous allez aborder dans votre mémoire. Elle doit convaincre le lecteur que le travail vaut la peine d’être lu. Il faut motiver ce lecteur, qui n’est peut-être pas a priori intéressé par votre travail. Expliquez pourquoi le problème étudié est important, quelle sera votre contribution et pourquoi les solutions apportées sont appropriées. Gardez à l’esprit que le lecteur n’a pas encore lu le travail, qu’il ne connaît pas le sujet et qu’il n’est pas un expert du domaine.
+\chapter{Découpage du mémoire}
+      \begin{itemize}
+                \item Un mémoire est découpé en chapitres.
+                \item Un chapitre est découpé en sections.
+                \item Une section est découpée en sous-sections.
+                \item Dans certains cas on peut avoir des sous-sous-sections.
+                \item On évite un découpage plus important. Donc pas de numérotation du type 5.4.3.2.1 .
+            \end{itemize}
+
+\begin{enumerate}
+            \item Le titre d'une section sert à structurer le texte et à introduire le sujet de la section.
+            \item Le titre n'est pas toujours lu (malheureusement).
+            \item Le premier paragraphe de la section doit donc introduire la section en précisant son sujet car seul le titre ne suffit pas.
+            \item Pour des sections de haut niveau (comme un chapitre), il est utile de commencer par une brève description du contenu, en présentant les sous-sections.
+\end{enumerate}
+
+
+\chapter{Intégration du Machine Learning}
+Pourquoi utiliser le Machine Learning ?
+Notre problème consiste à minimiser la distance parcourue par un préparateur de commandes dans un entrepôt de 200 × 200 unités, avec entre 75 et 150 articles à collecter. Si on soumet directement ces points à une métaheuristique (ACO ou algorithme génétique), on obtient un TSP de grande taille : l'espace de recherche explose (150! permutations possibles) et la convergence est très lente.
+
+Notre solution : utiliser le Machine Learning en amont pour regrouper les articles géographiquement proches en batches. Chaque batch devient alors un sous-TSP de petite taille, que la métaheuristique résout rapidement. C'est l'idée centrale de notre approche hybride ML + métaheuristique.
+
+\section{Les algorithmes de clustering évalués}
+Le clustering est une méthode d'apprentissage non supervisé : elle regroupe des données en groupes homogènes (clusters) sans étiquette préalable. Ici, chaque point est la coordonnée (x, y) d'un article. Nous avons comparé quatre algorithmes de familles différentes :
+\begin{itemize}
+    \item \textbf{K-Means} : algorithme de partitionnement itératif basé sur la
+    minimisation de la variance intra-cluster (WCSS). Il assigne chaque point au
+    centroïde le plus proche, puis recalcule les centroïdes, et répète jusqu'à
+    convergence.
+
+    \item \textbf{Agglomerative Clustering} : algorithme hiérarchique ascendant.
+    Il commence avec chaque point dans son propre cluster, puis fusionne
+    progressivement les clusters les plus proches selon un critère de liaison
+    (ici : Ward).
+
+    \item \textbf{GMM --- Gaussian Mixture Model (EM)} : modèle probabiliste qui
+    suppose que les données sont générées par un mélange de distributions
+    gaussiennes. L'algorithme Expectation-Maximization (EM) estime les paramètres
+    de chaque gaussienne.
+
+    \item \textbf{DBSCAN --- Density-Based Spatial Clustering} : algorithme basé
+    sur la densité. Il regroupe les points denses en clusters et marque comme
+    bruit les points isolés. Il ne nécessite pas de spécifier $k$ à l'avance.
+\end{itemize}
+\section{Sélection automatique du nombre de clusters k}
+K-Means, Agglomerative et GMM nécessitent de fixer $k$ avant l'exécution.
+Pour choisir $k$ automatiquement, nous utilisons le \textbf{Silhouette Score},
+calculé pour $k$ allant de 2 à 8, et nous retenons la valeur qui le maximise.
+
+Le Silhouette Score mesure à quel point chaque point est bien placé dans son
+cluster :
+
+\begin{equation}
+    s(i) = \frac{b(i) - a(i)}{\max(a(i),\ b(i))}
+\end{equation}
+
+où $a(i)$ est la distance moyenne au sein du cluster (cohésion) et $b(i)$ est
+la distance au cluster voisin le plus proche (séparation). Un score proche
+de 1 indique des clusters bien séparés. Sur nos données (150 articles,
+\texttt{seed=42}), le score est maximal pour $k = 7$ avec un Silhouette
+Score de 0,394.
+\section{Métriques d'évaluation des clusterings}
+Pour comparer les algorithmes de façon rigoureuse, nous utilisons trois métriques complémentaires :
+\begin{table}[h]
+\centering
+\begin{tabular}{|p{3cm}|p{2cm}|p{8cm}|}
+\hline
+\rowcolor{gray!30}
+\textbf{Métrique} & \textbf{Sens} & \textbf{Ce que ça mesure dans notre contexte} \\
+\hline
+Silhouette Score & $\uparrow$ mieux & Séparation entre clusters. Score élevé = articles d'un même batch proches $\rightarrow$ tournées locales courtes. \\
+\hline
+Davies-Bouldin & $\downarrow$ mieux & Compacité des clusters par rapport à leur distance mutuelle. Index faible = clusters denses et bien séparés. \\
+\hline
+Calinski-Harabasz & $\uparrow$ mieux & Densité intra-cluster vs dispersion inter-clusters. Score élevé = clusters bien distincts. \\
+\hline
+Temps d'exécution (ms) & $\downarrow$ mieux & Durée du pré-traitement ML. Doit rester négligeable devant la métaheuristique. \\
+\hline
+\end{tabular}
+\caption{Métriques d'évaluation des algorithmes de clustering}
+\label{tab:metriques}
+\end{table}
+\section{  Résultats et comparaison}
+Les expériences ont été menées sur un
+entrepôt de 200 × 200 unités, 150 articles, seed=42, k=7, sous Python 3.13 /
+scikit-learn. Voici les résultats obtenus :
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Conclusion}
+La conclusion est la dernière partie du travail écrit (la bibliographie et les annexes n’étant pas considérées comme faisant partie du texte lui-même). Elle est en général organisée comme suit :
+            \begin{center}
+            \begin{enumerate}
+                \item résumé du travail et des contributions
+                \item rappel des résultats principaux
+                \item applications possibles des résultats (s’il y a lieu)
+                \item limitations de la solution proposée
+                \item perspectives (pistes pour d’éventuels travaux futurs).
+            \end{enumerate}
+   \end{center}
+Le texte de la conclusion doit rester neutre mais doit mettre en avant l’apport de l’auteur par rapport au sujet.
+
+
+\renewcommand{\bibname}{Bibliographie}
+\addcontentsline{toc}{chapter}{Bibliographie}
+\renewcommand{\refname}{}
+\begin{thebibliography}{2}
+   \bibitem[label]{cle} Auteur, TITRE, editeur, annee
+   \bibitem[LAM94]{lam1} L. LAMPORT, {\it \LaTeX : A Document preparation system, Addison-Wesley, 1994}
+\end{thebibliography}
+
+\renewcommand{\bibname}{Webographie}
+\addcontentsline{toc}{chapter}{Webographie}
+\begin{thebibliography}{2}
+   \bibitem[CAT]{cat} \url{savoircoder.fr/cat}
+\end{thebibliography}
+
+\chapter{Annexes}
+\appendix
+\makeatletter
+\def\@seccntformat#1{Annexe~\csname the#1\endcsname:\quad}
+\makeatother
+	\section{Exemple d'annexe}
+	\section{Une autre annexe}
+\end{document}
