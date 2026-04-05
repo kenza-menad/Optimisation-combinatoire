@@ -33,7 +33,7 @@ def generate_distance_curve():
         # 2. Calcul Algorithme Génétique
         # (Paramètres constants pour montrer sa limite)
         ga = GeneticAlgorithmTSP(env, points, pop_size=200, generations=1000)
-        _, dist_ag, _ = ga.run()
+        _, dist_ag, _, _ = ga.run()
         distances_ag.append(dist_ag)
 
         gain = ((dist_base - dist_ag) / dist_base) * 100
