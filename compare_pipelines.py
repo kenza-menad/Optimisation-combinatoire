@@ -9,11 +9,11 @@ from src.ml.compare_algorithms import run_full_pipeline
 
 def run_ultimate_comparison():
     print("=" * 70)
-    print(" ⚔️ LE GRAND AFFRONTEMENT : ACO vs ALGORYTHME GÉNÉTIQUE")
+    print(" ⚔ LE GRAND AFFRONTEMENT : ACO vs ALGORYTHME GÉNÉTIQUE")
     print("=" * 70)
 
     # --- 1. GÉNÉRATION DES DONNÉES & MACHINE LEARNING ---
-    print("\n🧠 Lancement du pipeline dynamique de Clustering (Kenza)...")
+    print("\n Lancement du pipeline dynamique de Clustering (Kenza)...")
     # Au lieu de générer l'environnement à la main, on laisse le pipeline s'en charger
     # Il va tester tous les algos (K-Means, DBSCAN...) et garder le meilleur !
     payload, best_algo, df = run_full_pipeline(n_orders=15, items_per_order=(3, 6), seed=42)
@@ -22,11 +22,12 @@ def run_ultimate_comparison():
     depot_array = payload["depot"]
 
     # On recrée un environnement juste pour utiliser sa méthode calculate_distance
-    env = WarehouseEnvironment(width=100, height=100, depot=tuple(depot_array))
+    env = WarehouseEnvironment(width=200, height=200, depot=(0, 0))
+    orders = env.generate_orders(num_orders=30, items_per_order=(5, 10), seed=42)
 
     # On rassemble tous les points générés pour l'Approche A (sans ML)
     all_points = np.vstack(list(batches.values()))
-    print(f"\n📦 Total : {len(all_points)} articles à collecter répartis par {best_algo}.\n")
+    print(f"\n Total : {len(all_points)} articles à collecter répartis par {best_algo}.\n")
 
     # =========================================================
     # APPROCHE A : ACO CLASSIQUE (Sans ML)
@@ -49,8 +50,8 @@ def run_ultimate_comparison():
     _, dist_A = optimizer_standard.solve(points_a_visiter_complet, matrice_distance_complete)
     fin_A = time.time()
 
-    print(f"✅ Distance totale : {dist_A:.1f} unités")
-    print(f"⏱️ Temps de calcul : {fin_A - debut_A:.2f} secondes\n")
+    print(f" Distance totale : {dist_A:.1f} unités")
+    print(f" Temps de calcul : {fin_A - debut_A:.2f} secondes\n")
 
     # =========================================================
     # APPROCHE B : ACO HYBRIDE (Fourmis + ML)
@@ -78,8 +79,8 @@ def run_ultimate_comparison():
         dist_B += dist_cluster
 
     fin_B = time.time()
-    print(f"✅ Distance totale : {dist_B:.1f} unités")
-    print(f"⏱️ Temps de calcul : {fin_B - debut_B:.2f} secondes\n")
+    print(f" Distance totale : {dist_B:.1f} unités")
+    print(f"️ Temps de calcul : {fin_B - debut_B:.2f} secondes\n")
 
     # =========================================================
     # APPROCHE C : AG HYBRIDE (Génétique + ML)
@@ -106,8 +107,8 @@ def run_ultimate_comparison():
         dist_C += dist_cluster
 
     fin_C = time.time()
-    print(f"✅ Distance totale : {dist_C:.1f} unités")
-    print(f"⏱️ Temps de calcul : {fin_C - debut_C:.2f} secondes\n")
+    print(f" Distance totale : {dist_C:.1f} unités")
+    print(f"️ Temps de calcul : {fin_C - debut_C:.2f} secondes\n")
 
 
 if __name__ == "__main__":
