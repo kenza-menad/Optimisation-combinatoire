@@ -254,130 +254,129 @@ Le module ML transmet à la métaheuristique un dictionnaire Python structuré c
 
 \textbf{Gain de complexité :} Sans clustering : 119! permutations. Avec clustering : 4! + 4 × 30! réduction drastique de l'espace de recherche.
 
-
 \chapter{Métaheuristiques et Optimisation}
 
-Dans la continuité du pré-traitement par clustering K-Means, qui a permis de diviser notre problème initial de 69 articles en 2 sous-problèmes de type TSP de taille plus réduite, nous appliquons différentes métaheuristiques afin de déterminer la tournée optimale du préparateur au sein de chaque lot.
+Dans la continuité du pré-traitement par clustering K-Means, qui a permis de diviser notre problème initial de 119 articles en 4 sous-TSP de taille plus réduite, nous appliquons des métaheuristiques afin de déterminer la tournée optimale du préparateur au sein de chaque lot.
 
 \section{Implémentation des Algorithmes}
 
 \subsection{Algorithme des Colonies de Fourmis (ACO)}
 
-L’algorithme des colonies de fourmis (ACO) est une métaheuristique bio-inspirée particulièrement adaptée au problème du Voyageur de Commerce (TSP). Dans notre implémentation, chaque "fourmi" artificielle construit une solution probabiliste en tenant compte de deux facteurs principaux pour se déplacer d’un point $i$ vers un article $j$ :
+L’ACO est une métaheuristique bio-inspirée particulièrement adaptée au problème du Voyageur de Commerce (TSP). Dans notre implémentation, chaque "fourmi" artificielle construit une solution probabiliste en tenant compte de deux facteurs pour se déplacer d’un point $i$ vers un article $j$ :
 
 \begin{itemize}
-\item \textbf{La visibilité ($\eta_{ij}$)} : définie comme l’inverse de la distance de Manhattan entre deux points, favorisant les déplacements courts.
-\item \textbf{La trace de phéromone ($\tau_{ij}$)} : représentant l’historique des meilleurs chemins trouvés lors des itérations précédentes.
+    \item \textbf{La visibilité ($\eta_{ij}$)} : l’inverse de la distance de Manhattan entre les deux points.
+    \item \textbf{La trace de phéromone ($\tau_{ij}$)} : l’historique des meilleurs chemins trouvés.
 \end{itemize}
 
-La probabilité de transition $P_{ij}$ est définie par :
+La probabilité de transition est donnée par :
 
 $$
 P_{ij} = \frac{(\tau_{ij})^\alpha \cdot (\eta_{ij})^\beta}{\sum_{k} (\tau_{ik})^\alpha \cdot (\eta_{ik})^\beta}
 $$
 
-À chaque itération, les phéromones subissent une évaporation, tandis que les meilleures solutions renforcent les arcs empruntés. Ce mécanisme permet à l’algorithme de converger progressivement vers des solutions optimales.
+Ce mécanisme permet une convergence progressive vers des solutions de qualité.
 
 \subsection{Algorithme Génétique (AG)}
 
-Afin d’enrichir notre étude comparative, nous avons implémenté un Algorithme Génétique (AG). Cette approche évolutionniste manipule une population de solutions candidates (chromosomes), chacune représentant un chemin complet.
-
-Le problème du TSP impose des contraintes spécifiques, notamment l’absence de duplication ou d’omission d’articles. Pour garantir cela, nous avons utilisé l’opérateur de croisement \textbf{Order Crossover (OX)}, permettant de préserver l’ordre de visite tout en assurant la validité des solutions.
-
-Par ailleurs, un mécanisme de mutation par inversion a été intégré afin de maintenir la diversité génétique et éviter la convergence prématurée vers des minima locaux.
+L’algorithme génétique repose sur une population de solutions (chromosomes).
+Afin de respecter les contraintes du TSP, nous avons utilisé l’opérateur \textbf{Order Crossover (OX)}, garantissant l’absence de doublons.
+Une mutation par inversion est également introduite afin de maintenir la diversité et éviter les minima locaux.
 
 \section{Résultats et Comparaison des Approches}
 
-Afin d’évaluer l’impact du clustering et des différentes métaheuristiques, nous avons comparé trois approches sur un même environnement :
+Nous avons comparé quatre scénarios :
 
 \begin{enumerate}
-\item \textbf{Approche A (Classique)} : ACO appliqué sur l’ensemble des articles (sans clustering).
-\item \textbf{Approche B (Hybride ACO)} : Clustering K-Means suivi d’une optimisation par ACO sur chaque cluster.
-\item \textbf{Approche C (Hybride AG)} : Clustering K-Means suivi d’une optimisation par Algorithme Génétique.
+    \item \textbf{ACO sans ML}
+    \item \textbf{AG sans ML}
+    \item \textbf{ACO avec ML (K-Means, k=4)}
+    \item \textbf{AG avec ML (K-Means, k=4)}
 \end{enumerate}
 
-\subsection{Résultats expérimentaux}
+\subsection{Tableau de synthèse}
 
-Les expérimentations ont été réalisées sur un entrepôt simulé de dimension 200x200 contenant 69 articles. Le processus de clustering a automatiquement sélectionné l’algorithme K-Means avec $k=2$ clusters, basé sur un score de silhouette de 0.4458.
-
-Les performances obtenues sont les suivantes :
-
-\begin{itemize}
-\item \textbf{Approche A (ACO classique)} :
-\begin{itemize}
-\item Distance totale : 1792 unités
-\item Temps de calcul : 1.45 secondes
-\end{itemize}
-
-\item \textbf{Approche B (ACO hybride)} :
-\begin{itemize}
-    \item Distance totale : 1984 unités
-    \item Temps de calcul : 0.81 secondes
-\end{itemize}
-
-\item \textbf{Approche C (AG hybride)} :
-\begin{itemize}
-    \item Distance totale : 4724 unités
-    \item Temps de calcul : 0.06 secondes
-\end{itemize}
-\end{itemize}
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|c|}
+\hline
+Approche & Distance & Temps (s) \\
+\hline
+ACO sans ML & 2588 & 3.32 \\
+AG sans ML & 12052 & 5.37 \\
+ACO avec ML & 3334 & 1.34 \\
+AG avec ML & 5600 & 4.42 \\
+\hline
+\end{tabular}
+\caption{Comparaison des performances}
+\end{table}
 
 \subsection{Analyse des performances}
 
-Les résultats obtenus mettent en évidence un compromis fondamental entre qualité de solution et temps de calcul.
+L’ACO sans Machine Learning produit la meilleure distance (2588), car il optimise une tournée globale. Cependant, son temps de calcul reste élevé.
 
-L’approche classique (ACO sans clustering) fournit la meilleure distance, car elle considère l’ensemble des articles dans une seule tournée globale. Cependant, cette méthode présente un coût computationnel plus élevé, lié à la taille importante de l’espace de recherche.
+L’algorithme génétique sans Machine Learning est fortement pénalisé par l’explosion combinatoire, ce qui entraîne une distance très élevée et un temps important.
 
-L’introduction du clustering (Approche B) permet de réduire significativement le temps de calcul. Cette amélioration s’explique par la décomposition du problème en sous-problèmes indépendants plus simples à résoudre. En contrepartie, la distance totale augmente légèrement en raison des retours au dépôt entre les clusters.
+L’introduction du clustering (K-Means) permet de réduire significativement le temps de calcul. L’ACO avec ML divise le temps par plus de deux (1.34 s), au prix d’une légère augmentation de la distance (3334), due aux retours au dépôt.
 
-L’algorithme génétique (Approche C) se distingue par un temps d’exécution extrêmement faible, mais produit des solutions de moindre qualité. Cela montre une convergence rapide mais insuffisamment précise pour ce type de problème.
+L’AG avec ML améliore ses performances par rapport à sa version sans ML, mais reste moins efficace que l’ACO.
 
-Ainsi, trois comportements distincts émergent :
+\subsection{Visualisation des performances}
 
+Afin de mieux interpréter ces résultats, nous avons représenté graphiquement les performances des différentes approches.
+
+\paragraph{Comparaison globale}
+
+La figure suivante montre simultanément la distance et le temps :
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{../../fig_barres_performances.png}
+\caption{Comparaison des distances et temps de calcul}
+\end{figure}
+
+On observe que :
 \begin{itemize}
-\item L’ACO classique privilégie la qualité de solution.
-\item L’ACO hybride offre un bon compromis entre performance et rapidité.
-\item L’AG privilégie la vitesse au détriment de l’optimalité.
+    \item l’ACO sans ML minimise la distance,
+    \item l’ACO avec ML réduit fortement le temps,
+    \item l’AG sans ML est le moins performant,
+    \item l’AG avec ML améliore ses résultats mais reste inférieur à l’ACO.
 \end{itemize}
 
-\subsection{Interprétation des résultats}
+\paragraph{Compromis Temps / Distance}
 
-L’augmentation de la distance dans les approches hybrides ne constitue pas une faiblesse, mais résulte d’une modélisation plus réaliste du problème logistique. En effet, contrairement à l’approche classique, les solutions hybrides imposent des retours au dépôt, reflétant les contraintes de capacité d’un chariot.
-
-Les résultats confirment également la pertinence de l’ACO pour les problèmes de routage spatial, grâce à son mécanisme d’apprentissage progressif par phéromones.
-
-À l’inverse, l’algorithme génétique, bien que rapide, nécessite un réglage plus fin de ses paramètres pour atteindre des performances comparables.
-
-Enfin, l’intégration du Machine Learning en amont constitue un levier majeur pour réduire la complexité du problème, rendant son traitement possible à grande échelle.
+La figure suivante permet d’analyser le compromis :
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{../Figure_1.png}
-\caption{Comparaison des algorithmes de clustering}
+\includegraphics[width=0.75\textwidth]{../../fig_scatter_pareto.png}
+\caption{Compromis temps / distance}
 \end{figure}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.9\textwidth]{../Figure_2.png}
-\caption{Comparaison des métriques de performance}
-\end{figure}
+Dans ce plan, la zone idéale se situe en bas à gauche.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.7\textwidth]{../Figure_3.png}
-\caption{Résultat du clustering optimal (K-Means)}
-\end{figure}
+On observe que :
+\begin{itemize}
+    \item l’ACO avec ML est le meilleur compromis,
+    \item l’ACO sans ML est très performant mais plus lent,
+    \item l’AG reste globalement moins efficace.
+\end{itemize}
 
-\chapter{Conclusion}
+\section{Interprétation}
 
-Ce projet a permis de démontrer l’intérêt de l’hybridation entre le Machine Learning et l’Optimisation Combinatoire dans le cadre de la préparation de commandes.
+L’augmentation de la distance dans les approches hybrides ne constitue pas une faiblesse, mais reflète une modélisation plus réaliste des contraintes logistiques (retours au dépôt).
 
-L’utilisation du clustering K-Means a permis de segmenter efficacement l’espace de travail en zones géographiques cohérentes, réduisant ainsi la complexité globale du problème. Associée à des métaheuristiques performantes comme l’ACO, cette approche permet d’obtenir des solutions rapidement tout en conservant une qualité satisfaisante.
+L’ACO s’impose comme la métaheuristique la plus adaptée au problème de routage, grâce à son mécanisme d’apprentissage progressif.
 
-Cette architecture hybride constitue ainsi une solution robuste, scalable et adaptée aux contraintes réelles de la logistique moderne. Elle met en évidence qu’une approche intelligente basée sur la décomposition du problème offre un compromis optimal entre temps de calcul, qualité de solution et réalisme opérationnel.
+À l’inverse, l’algorithme génétique nécessite un réglage plus fin pour atteindre des performances comparables.
 
+\subsection{Conclusion}
 
-\chapter{Conclusion}
+Ce projet met en évidence l’intérêt de combiner Machine Learning et optimisation combinatoire.
+
+Le clustering permet de réduire drastiquement la complexité du problème, tandis que les métaheuristiques assurent une optimisation efficace à l’échelle locale.
+
+L’approche hybride ACO + K-Means apparaît comme la solution la plus pertinente, offrant un excellent compromis entre rapidité, qualité de solution et réalisme opérationnel.
 
 
 \chapter{Ressources et code source}

@@ -1,115 +1,166 @@
 import numpy as np
 import time
+import pandas as pd
+from sklearn.cluster import KMeans
 
 from src.env.warehouse_env import WarehouseEnvironment
 from src.metaheuristics.aco_solver import AntColonyOptimizer
 from src.metaheuristics.genetic_solver import GeneticAlgorithmSolver
-from src.ml.compare_algorithms import run_full_pipeline
 
 
-def run_ultimate_comparison():
-    print("=" * 70)
-    print(" ⚔ LE GRAND AFFRONTEMENT : ACO vs ALGORYTHME GÉNÉTIQUE")
-    print("=" * 70)
+def build_distance_matrix(env, points):
+    n = len(points)
+    matrix = np.zeros((n, n))
+    for i in range(n):
+        for j in range(n):
+            matrix[i][j] = env.calculate_distance(points[i], points[j])
+    return matrix
 
-    # --- 1. GÉNÉRATION DES DONNÉES & MACHINE LEARNING ---
-    print("\n Lancement du pipeline dynamique de Clustering (Kenza)...")
-    # Au lieu de générer l'environnement à la main, on laisse le pipeline s'en charger
-    # Il va tester tous les algos (K-Means, DBSCAN...) et garder le meilleur !
-    payload, best_algo, df = run_full_pipeline(n_orders=15, items_per_order=(3, 6), seed=42)
 
-    batches = payload["batches"]
-    depot_array = payload["depot"]
-
-    # On recrée un environnement juste pour utiliser sa méthode calculate_distance
+def generate_reference_data():
+    """
+    Données de référence cohérentes avec le rapport :
+    entrepôt 200x200, seed=42, 119 articles.
+    """
     env = WarehouseEnvironment(width=200, height=200, depot=(0, 0))
-    orders = env.generate_orders(num_orders=30, items_per_order=(5, 10), seed=42)
+    orders = env.generate_orders(num_orders=16, items_per_order=(7, 8), seed=42)
+    all_points = env.flatten_orders(orders)
+    return env, orders, all_points
 
-    # On rassemble tous les points générés pour l'Approche A (sans ML)
-    all_points = np.vstack(list(batches.values()))
-    print(f"\n Total : {len(all_points)} articles à collecter répartis par {best_algo}.\n")
 
-    # =========================================================
-    # APPROCHE A : ACO CLASSIQUE (Sans ML)
-    # =========================================================
-    print("=" * 70)
-    print(" [APPROCHE A] ACO Standard (1 seule grande tournée, sans ML)")
-    print("=" * 70)
-    points_a_visiter_complet = [env.depot] + [tuple(p) for p in all_points]
-    num_points_total = len(points_a_visiter_complet)
+def build_kmeans_batches(points, k=4):
+    """
+    Clustering K-Means fixe à k=4, comme dans le rapport.
+    Retourne un dictionnaire {cluster_id: array(points)}.
+    """
+    kmeans = KMeans(n_clusters=k, random_state=42, n_init=10)
+    labels = kmeans.fit_predict(points)
 
-    matrice_distance_complete = np.zeros((num_points_total, num_points_total))
-    for j in range(num_points_total):
-        for k in range(num_points_total):
-            matrice_distance_complete[j][k] = env.calculate_distance(points_a_visiter_complet[j],
-                                                                     points_a_visiter_complet[k])
+    batches = {}
+    for cluster_id in range(k):
+        batches[cluster_id] = points[labels == cluster_id]
 
-    optimizer_standard = AntColonyOptimizer(num_ants=10, num_iterations=40)
+    return batches, labels, kmeans.cluster_centers_
 
-    debut_A = time.time()
-    _, dist_A = optimizer_standard.solve(points_a_visiter_complet, matrice_distance_complete)
-    fin_A = time.time()
 
-    print(f" Distance totale : {dist_A:.1f} unités")
-    print(f" Temps de calcul : {fin_A - debut_A:.2f} secondes\n")
+def run_aco(env, points, num_ants=10, num_iterations=40):
+    """
+    Exécute ACO sur une liste de points (sans ou avec ML selon ce qu'on lui donne).
+    """
+    route_points = [env.depot] + [tuple(p) for p in points]
+    distance_matrix = build_distance_matrix(env, route_points)
 
-    # =========================================================
-    # APPROCHE B : ACO HYBRIDE (Fourmis + ML)
-    # =========================================================
-    print("=" * 70)
-    print(f" [APPROCHE B] ACO Hybride (Fourmis sur clusters {best_algo})")
-    print("=" * 70)
-    optimizer_aco = AntColonyOptimizer(num_ants=10, num_iterations=40)
-    dist_B = 0.0
-    debut_B = time.time()
+    optimizer = AntColonyOptimizer(
+        num_ants=num_ants,
+        num_iterations=num_iterations
+    )
 
-    for cluster_id, batch_pts in batches.items():
-        if len(batch_pts) == 0: continue
+    start = time.time()
+    _, best_distance = optimizer.solve(route_points, distance_matrix)
+    end = time.time()
 
-        # Beaucoup plus simple qu'avant : on prend juste les points du cluster !
-        points_cluster = [env.depot] + [tuple(p) for p in batch_pts]
-        num_points = len(points_cluster)
+    return best_distance, end - start
 
-        matrice_cluster = np.zeros((num_points, num_points))
-        for j in range(num_points):
-            for k in range(num_points):
-                matrice_cluster[j][k] = env.calculate_distance(points_cluster[j], points_cluster[k])
 
-        _, dist_cluster = optimizer_aco.solve(points_cluster, matrice_cluster)
-        dist_B += dist_cluster
+def run_ga(env, points, population_size=100, generations=300, mutation_rate=0.05):
+    """
+    Exécute l'algorithme génétique sur une liste de points.
+    """
+    route_points = [env.depot] + [tuple(p) for p in points]
+    distance_matrix = build_distance_matrix(env, route_points)
 
-    fin_B = time.time()
-    print(f" Distance totale : {dist_B:.1f} unités")
-    print(f"️ Temps de calcul : {fin_B - debut_B:.2f} secondes\n")
+    optimizer = GeneticAlgorithmSolver(
+        population_size=population_size,
+        generations=generations,
+        mutation_rate=mutation_rate
+    )
 
-    # =========================================================
-    # APPROCHE C : AG HYBRIDE (Génétique + ML)
-    # =========================================================
-    print("=" * 70)
-    print(f" [APPROCHE C] Algorithme Génétique Hybride (ADN sur clusters {best_algo})")
-    print("=" * 70)
-    optimizer_ag = GeneticAlgorithmSolver(population_size=20, generations=50, mutation_rate=0.1)
-    dist_C = 0.0
-    debut_C = time.time()
+    start = time.time()
+    _, best_distance = optimizer.solve(route_points, distance_matrix)
+    end = time.time()
 
-    for cluster_id, batch_pts in batches.items():
-        if len(batch_pts) == 0: continue
+    return best_distance, end - start
 
-        points_cluster = [env.depot] + [tuple(p) for p in batch_pts]
-        num_points = len(points_cluster)
 
-        matrice_cluster = np.zeros((num_points, num_points))
-        for j in range(num_points):
-            for k in range(num_points):
-                matrice_cluster[j][k] = env.calculate_distance(points_cluster[j], points_cluster[k])
+def run_with_ml(env, batches, solver_name):
+    """
+    Applique une métaheuristique cluster par cluster, puis somme les distances.
+    """
+    total_distance = 0.0
+    total_time = 0.0
 
-        _, dist_cluster = optimizer_ag.solve(points_cluster, matrice_cluster)
-        dist_C += dist_cluster
+    for cluster_id, batch_points in batches.items():
+        if len(batch_points) == 0:
+            continue
 
-    fin_C = time.time()
-    print(f" Distance totale : {dist_C:.1f} unités")
-    print(f"️ Temps de calcul : {fin_C - debut_C:.2f} secondes\n")
+        if solver_name == "ACO":
+            dist, exec_time = run_aco(env, batch_points, num_ants=10, num_iterations=40)
+        elif solver_name == "AG":
+            dist, exec_time = run_ga(env, batch_points, population_size=100, generations=300, mutation_rate=0.05)
+        else:
+            raise ValueError("solver_name doit être 'ACO' ou 'AG'.")
+
+        total_distance += dist
+        total_time += exec_time
+
+    return total_distance, total_time
+
+
+def main():
+    print("=" * 80)
+    print("COMPARAISON METAHEURISTIQUES AVEC / SANS MACHINE LEARNING")
+    print("=" * 80)
+
+    # 1) Données communes
+    env, orders, all_points = generate_reference_data()
+    print(f"Nombre total d'articles : {len(all_points)}")
+
+    # 2) K-Means fixe à 4 clusters, comme dans le rapport
+    batches, labels, centers = build_kmeans_batches(all_points, k=4)
+    print("K-Means appliqué avec k = 4")
+    for cid, pts in batches.items():
+        print(f"  Cluster {cid}: {len(pts)} articles")
+
+    # 3) ACO sans ML
+    print("\n[1] ACO sans ML")
+    aco_no_ml_dist, aco_no_ml_time = run_aco(env, all_points, num_ants=10, num_iterations=40)
+    print(f"Distance : {aco_no_ml_dist:.1f}")
+    print(f"Temps    : {aco_no_ml_time:.2f} s")
+
+    # 4) AG sans ML
+    print("\n[2] AG sans ML")
+    ga_no_ml_dist, ga_no_ml_time = run_ga(env, all_points, population_size=100, generations=300, mutation_rate=0.05)
+    print(f"Distance : {ga_no_ml_dist:.1f}")
+    print(f"Temps    : {ga_no_ml_time:.2f} s")
+
+    # 5) ACO avec ML
+    print("\n[3] ACO avec ML (K-Means + k=4)")
+    aco_ml_dist, aco_ml_time = run_with_ml(env, batches, "ACO")
+    print(f"Distance : {aco_ml_dist:.1f}")
+    print(f"Temps    : {aco_ml_time:.2f} s")
+
+    # 6) AG avec ML
+    print("\n[4] AG avec ML (K-Means + k=4)")
+    ga_ml_dist, ga_ml_time = run_with_ml(env, batches, "AG")
+    print(f"Distance : {ga_ml_dist:.1f}")
+    print(f"Temps    : {ga_ml_time:.2f} s")
+
+    # 7) Tableau final
+    df = pd.DataFrame([
+        ["ACO sans ML", aco_no_ml_dist, aco_no_ml_time],
+        ["AG sans ML", ga_no_ml_dist, ga_no_ml_time],
+        ["ACO avec ML", aco_ml_dist, aco_ml_time],
+        ["AG avec ML", ga_ml_dist, ga_ml_time],
+    ], columns=["Approche", "Distance totale", "Temps (s)"])
+
+    print("\n" + "=" * 80)
+    print("TABLEAU FINAL")
+    print("=" * 80)
+    print(df.to_string(index=False))
+
+    df.to_csv("resultats_metaheuristiques_ml.csv", index=False)
+    print("\nFichier sauvegardé : resultats_metaheuristiques_ml.csv")
 
 
 if __name__ == "__main__":
-    run_ultimate_comparison()
+    main()
