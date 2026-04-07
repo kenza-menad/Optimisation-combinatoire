@@ -12,49 +12,70 @@
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}Intégration du Machine Learning}{4}{chapter.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Modélisation et Stratégies de Référence}{4}{chapter.2}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {2.1}Les algorithmes de clustering évalués}{4}{section.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Sélection automatique du nombre de clusters k}{4}{section.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}Métriques d'évaluation des clusterings}{5}{section.2.3}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Métriques d'évaluation des algorithmes de clustering}}{5}{table.2.1}\protected@file@percent }
-\newlabel{tab:metriques}{{2.1}{5}{Métriques d'évaluation des algorithmes de clustering}{table.2.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.4}Résultats et comparaison}{5}{section.2.4}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces Comparaison des quatre algorithmes de clustering (119 articles, k=4, seed=42).}}{5}{table.2.2}\protected@file@percent }
-\newlabel{tab:comparaison}{{2.2}{5}{Comparaison des quatre algorithmes de clustering (119 articles, k=4, seed=42)}{table.2.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.5}Visualisations}{6}{section.2.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Comparaison des quatre clusterings sur 119 articles (entrepôt 200×200).}}{6}{figure.2.1}\protected@file@percent }
-\newlabel{fig:comparaison_clusterings}{{2.1}{6}{Comparaison des quatre clusterings sur 119 articles (entrepôt 200×200)}{figure.2.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Métriques comparatives par algorithme (Silhouette ↑, Davies-Bouldin ↓, Calinski-Harabasz ↑, Temps ↓).}}{7}{figure.2.2}\protected@file@percent }
-\newlabel{fig:metriques_comparaison}{{2.2}{7}{Métriques comparatives par algorithme (Silhouette ↑, Davies-Bouldin ↓, Calinski-Harabasz ↑, Temps ↓)}{figure.2.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.6}Choix de ML - K-Means}{7}{section.2.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces K-Means (k=4) : carte de l'entrepôt avec centroïdes et distribution des tailles de clusters.}}{8}{figure.2.3}\protected@file@percent }
-\newlabel{fig:best_clustering}{{2.3}{8}{K-Means (k=4) : carte de l'entrepôt avec centroïdes et distribution des tailles de clusters}{figure.2.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.7}Intégration avec la métaheuristique}{8}{section.2.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Métaheuristiques et Optimisation}{9}{chapter.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Modélisation de l'environnement (Warehouse Environment)}{4}{section.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Distance de Manhattan}{4}{subsection.2.1.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Visualisation de l'environnement de l'entrepôt avec le dépôt et une vague de commandes générée aléatoirement.}}{5}{figure.2.1}\protected@file@percent }
+\newlabel{fig:warehouse_plan}{{2.1}{5}{Visualisation de l'environnement de l'entrepôt avec le dépôt et une vague de commandes générée aléatoirement}{figure.2.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Algorithme de Référence : Le Plus Proche Voisin (Baseline)}{5}{section.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Principe et Évaluation}{5}{subsection.2.2.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Évaluation des performances de la Baseline selon la taille du problème.}}{5}{table.2.1}\protected@file@percent }
+\newlabel{tab:baseline_eval}{{2.1}{5}{Évaluation des performances de la Baseline selon la taille du problème}{table.2.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Optimisation par Algorithme Génétique (AG)}{6}{section.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Paramétrage et Convergence}{6}{subsection.2.3.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Courbe de convergence de l'Algorithme Génétique par rapport au score Glouton.}}{6}{figure.2.2}\protected@file@percent }
+\newlabel{fig:convergence_ag}{{2.2}{6}{Courbe de convergence de l'Algorithme Génétique par rapport au score Glouton}{figure.2.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Analyse de Mise à l'Échelle (Scaling Analysis)}{6}{section.2.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces Comparaison des performances Baseline vs Algorithme Génétique selon le volume.}}{6}{table.2.2}\protected@file@percent }
+\newlabel{tab:scaling_analysis}{{2.2}{6}{Comparaison des performances Baseline vs Algorithme Génétique selon le volume}{table.2.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}L'effondrement combinatoire}{7}{subsection.2.4.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Évolution croisée des performances mettant en évidence l'effondrement de l'AG face à la complexité combinatoire.}}{7}{figure.2.3}\protected@file@percent }
+\newlabel{fig:scaling_analysis}{{2.3}{7}{Évolution croisée des performances mettant en évidence l'effondrement de l'AG face à la complexité combinatoire}{figure.2.3}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Intégration du Machine Learning}{8}{chapter.3}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Implémentation des Algorithmes}{9}{section.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Algorithme des Colonies de Fourmis (ACO)}{9}{subsection.3.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Algorithme Génétique (AG)}{9}{subsection.3.1.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Résultats et Comparaison des Approches}{9}{section.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Tableau de synthèse}{10}{subsection.3.2.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Comparaison des performances}}{10}{table.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Analyse des performances}{10}{subsection.3.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Visualisation des performances}{10}{subsection.3.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Comparaison globale}{10}{section*.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Comparaison des distances et temps de calcul}}{10}{figure.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Compromis Temps / Distance}{11}{section*.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Compromis temps / distance}}{11}{figure.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Interprétation}{11}{section.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Conclusion}{12}{chapter.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Les algorithmes de clustering évalués}{8}{section.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Sélection automatique du nombre de clusters k}{8}{section.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Métriques d'évaluation des clusterings}{9}{section.3.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Métriques d'évaluation des algorithmes de clustering}}{9}{table.3.1}\protected@file@percent }
+\newlabel{tab:metriques}{{3.1}{9}{Métriques d'évaluation des algorithmes de clustering}{table.3.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Résultats et comparaison}{9}{section.3.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Comparaison des quatre algorithmes de clustering (119 articles, k=4, seed=42).}}{9}{table.3.2}\protected@file@percent }
+\newlabel{tab:comparaison}{{3.2}{9}{Comparaison des quatre algorithmes de clustering (119 articles, k=4, seed=42)}{table.3.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Visualisations}{10}{section.3.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Comparaison des quatre clusterings sur 119 articles (entrepôt 200×200).}}{10}{figure.3.1}\protected@file@percent }
+\newlabel{fig:comparaison_clusterings}{{3.1}{10}{Comparaison des quatre clusterings sur 119 articles (entrepôt 200×200)}{figure.3.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Métriques comparatives par algorithme (Silhouette ↑, Davies-Bouldin ↓, Calinski-Harabasz ↑, Temps ↓).}}{11}{figure.3.2}\protected@file@percent }
+\newlabel{fig:metriques_comparaison}{{3.2}{11}{Métriques comparatives par algorithme (Silhouette ↑, Davies-Bouldin ↓, Calinski-Harabasz ↑, Temps ↓)}{figure.3.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.6}Choix de ML - K-Means}{11}{section.3.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces K-Means (k=4) : carte de l'entrepôt avec centroïdes et distribution des tailles de clusters.}}{12}{figure.3.3}\protected@file@percent }
+\newlabel{fig:best_clustering}{{3.3}{12}{K-Means (k=4) : carte de l'entrepôt avec centroïdes et distribution des tailles de clusters}{figure.3.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.7}Intégration avec la métaheuristique}{12}{section.3.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Métaheuristiques et Optimisation}{13}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Ressources et code source}{13}{chapter.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Implémentation des Algorithmes}{13}{section.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Algorithme des Colonies de Fourmis (ACO)}{13}{subsection.4.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Algorithme Génétique (AG)}{13}{subsection.4.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Résultats et Comparaison des Approches}{13}{section.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Tableau de synthèse}{14}{subsection.4.2.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Comparaison des performances}}{14}{table.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Analyse des performances}{14}{subsection.4.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Visualisation des performances}{14}{subsection.4.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Comparaison globale}{14}{section*.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Comparaison des distances et temps de calcul}}{14}{figure.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Compromis Temps / Distance}{15}{section*.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Compromis temps / distance}}{15}{figure.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Interprétation}{15}{section.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusion}{16}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{LastPage}{{5}{13}{Ressources et code source}{page.13}{}}
-\gdef\lastpage@lastpage{13}
-\gdef\lastpage@lastpageHy{13}
-\gdef \@abspage@last{13}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Ressources et code source}{17}{chapter.6}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{LastPage}{{6}{17}{Ressources et code source}{page.17}{}}
+\gdef\lastpage@lastpage{17}
+\gdef\lastpage@lastpageHy{17}
+\gdef \@abspage@last{17}

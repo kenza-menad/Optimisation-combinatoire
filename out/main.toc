@@ -1,23 +1,32 @@
 \babel@toc {french}{}\relax 
 \contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Intégration du Machine Learning}{4}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Les algorithmes de clustering évalués}{4}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Sélection automatique du nombre de clusters k}{4}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Métriques d'évaluation des clusterings}{5}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Résultats et comparaison}{5}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Visualisations}{6}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Choix de ML - K-Means}{7}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Intégration avec la métaheuristique}{8}{section.2.7}%
-\contentsline {chapter}{\numberline {3}Métaheuristiques et Optimisation}{9}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Implémentation des Algorithmes}{9}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Algorithme des Colonies de Fourmis (ACO)}{9}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Algorithme Génétique (AG)}{9}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Résultats et Comparaison des Approches}{9}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Tableau de synthèse}{10}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Analyse des performances}{10}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Visualisation des performances}{10}{subsection.3.2.3}%
-\contentsline {paragraph}{Comparaison globale}{10}{section*.2}%
-\contentsline {paragraph}{Compromis Temps / Distance}{11}{section*.3}%
-\contentsline {section}{\numberline {3.3}Interprétation}{11}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Conclusion}{12}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Ressources et code source}{13}{chapter.5}%
+\contentsline {chapter}{\numberline {2}Modélisation et Stratégies de Référence}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Modélisation de l'environnement (Warehouse Environment)}{4}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Distance de Manhattan}{4}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Algorithme de Référence : Le Plus Proche Voisin (Baseline)}{5}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Principe et Évaluation}{5}{subsection.2.2.1}%
+\contentsline {section}{\numberline {2.3}Optimisation par Algorithme Génétique (AG)}{6}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Paramétrage et Convergence}{6}{subsection.2.3.1}%
+\contentsline {section}{\numberline {2.4}Analyse de Mise à l'Échelle (Scaling Analysis)}{6}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}L'effondrement combinatoire}{7}{subsection.2.4.1}%
+\contentsline {chapter}{\numberline {3}Intégration du Machine Learning}{8}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Les algorithmes de clustering évalués}{8}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Sélection automatique du nombre de clusters k}{8}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Métriques d'évaluation des clusterings}{9}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Résultats et comparaison}{9}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Visualisations}{10}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Choix de ML - K-Means}{11}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Intégration avec la métaheuristique}{12}{section.3.7}%
+\contentsline {chapter}{\numberline {4}Métaheuristiques et Optimisation}{13}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Implémentation des Algorithmes}{13}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Algorithme des Colonies de Fourmis (ACO)}{13}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Algorithme Génétique (AG)}{13}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Résultats et Comparaison des Approches}{13}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Tableau de synthèse}{14}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Analyse des performances}{14}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Visualisation des performances}{14}{subsection.4.2.3}%
+\contentsline {paragraph}{Comparaison globale}{14}{section*.2}%
+\contentsline {paragraph}{Compromis Temps / Distance}{15}{section*.3}%
+\contentsline {section}{\numberline {4.3}Interprétation}{15}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Conclusion}{16}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Ressources et code source}{17}{chapter.6}%

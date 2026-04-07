@@ -109,7 +109,106 @@ L'idée centrale est d'utiliser le clustering \textbf{en amont} de la
 métaheuristique : plutôt que de résoudre un TSP global de 119 points,
 on résout 4 sous-TSP d'environ 30 articles chacun, ce qui réduit
 drastiquement la complexité du problème.
+% =========================================================
+% CHAPITRE 2 : MODÉLISATION ET STRATÉGIES DE RÉFÉRENCE
+% =========================================================
+\chapter{Modélisation et Stratégies de Référence}
 
+\section{Modélisation de l'environnement (Warehouse Environment)}
+La première étape de notre travail a consisté à créer une simulation fidèle des contraintes physiques d'un entrepôt. Nous avons modélisé cet espace sous la forme d'une grille orthogonale de 200 × 200 unités.
+
+\subsection{Distance de Manhattan}
+Contrairement à une distance à vol d'oiseau (Euclidienne), les préparateurs en entrepôt se déplacent le long d'allées perpendiculaires. Nous avons donc implémenté la \textbf{distance de Manhattan} ($L_1$ norm) pour calculer tous les déplacements :
+\begin{equation}
+    d(A, B) = |x_A - x_B| + |y_A - y_B|
+\end{equation}
+Cette modélisation garantit que nos résultats d'optimisation sont transposables à une configuration réelle de rayonnages. Le dépôt, point de départ et d'arrivée de chaque tournée, a été fixé aux coordonnées $(0,0)$.
+
+\begin{figure}[H]
+    \centering
+    % Remplace par le nom de l'image générée par ton script warehouse_env.py
+    \includegraphics[width=0.7\linewidth]{../../env/fig_warehouse_plan.png}
+    \caption{Visualisation de l'environnement de l'entrepôt avec le dépôt et une vague de commandes générée aléatoirement.}
+    \label{fig:warehouse_plan}
+\end{figure}
+
+\section{Algorithme de Référence : Le Plus Proche Voisin (Baseline)}
+Afin d'évaluer l'efficacité de nos métaheuristiques, nous avons implémenté un algorithme "Glouton" (Nearest Neighbor).
+
+\subsection{Principe et Évaluation}
+À chaque étape, le préparateur se rend à l'article le plus proche de sa position actuelle. Cet algorithme nous sert de ligne de base (Baseline). Comme le montre le tableau \ref{tab:baseline_eval}, sa complexité algorithmique très faible lui permet de s'exécuter de manière quasi-instantanée, même sur de gros volumes.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\rowcolor{gray!30}
+\textbf{Taille de la commande (Articles)} & \textbf{Distance Totale (Unités)} & \textbf{Temps d'exécution (s)} \\
+\hline
+10 & 284 & 0,00012 \\
+\hline
+30 & 642 & 0,00045 \\
+\hline
+50 & 918 & 0,00103 \\
+\hline
+100 & 1340 & 0,00350 \\
+\hline
+\end{tabular}
+\caption{Évaluation des performances de la Baseline selon la taille du problème.}
+\label{tab:baseline_eval}
+\end{table}
+
+\textbf{Limites :} Bien qu'extrêmement rapide, cet algorithme manque de vision globale. Il a tendance à "s'enfermer" aux extrémités de l'entrepôt, générant un long et coûteux trajet de retour vers le dépôt.
+
+\section{Optimisation par Algorithme Génétique (AG)}
+En complément des colonies de fourmis, nous avons développé un \textbf{Algorithme Génétique} (AG) pour optimiser les tournées locales.
+
+\subsection{Paramétrage et Convergence}
+L'algorithme simule l'évolution naturelle (population de 100 individus, 300 générations, taux de mutation de 5 \%). Les opérateurs génétiques utilisés sont la sélection par tournoi, le croisement de type \textit{Order Crossover} (OX) adapté au TSP, et la mutation par échange (\textit{Swap}).
+
+La figure \ref{fig:convergence_ag} illustre la courbe de convergence de notre Algorithme Génétique face à la Baseline sur une commande de taille moyenne.
+
+\begin{figure}[H]
+    \centering
+    % Remplace par le nom de l'image générée par la fonction plot_route/history dans genetic_algo.py
+    \includegraphics[width=0.8\linewidth]{../../metaheuristics/fig_convergence_ag.png}
+    \caption{Courbe de convergence de l'Algorithme Génétique par rapport au score Glouton.}
+    \label{fig:convergence_ag}
+\end{figure}
+
+\section{Analyse de Mise à l'Échelle (Scaling Analysis)}
+Pour justifier l'intervention du Machine Learning (K-Means) dans notre pipeline, nous avons mené une expérience de résistance à l'échelle de notre Algorithme Génétique, détaillée dans le tableau \ref{tab:scaling_analysis}.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|c|c|}
+\hline
+\rowcolor{gray!40}
+\textbf{Scénario} & \textbf{Distance Baseline} & \textbf{Distance AG} & \textbf{Gain/Perte (\%)} \\
+\hline
+\rowcolor{green!15}
+Phase 1 : Petite commande (25 arts.) & 512 & 435 & \textbf{+ 15,0 \%} \\
+\hline
+\rowcolor{red!15}
+Phase 2 : Vague complète (130 arts.) & 1680 & 2105 & \textbf{- 25,2 \%} \\
+\hline
+\end{tabular}
+\caption{Comparaison des performances Baseline vs Algorithme Génétique selon le volume.}
+\label{tab:scaling_analysis}
+\end{table}
+
+\subsection{L'effondrement combinatoire}
+Les résultats révèlent un comportement critique : sur un petit volume (25 articles), l'AG surpasse la Baseline en trouvant des raccourcis globaux. Cependant, lorsque nous lui soumettons l'entrepôt complet (130 articles), l'AG s'effondre. L'espace de recherche devient si vaste ($130!$ permutations) que l'algorithme ne parvient plus à converger vers une solution acceptable dans un temps imparti, finissant par faire pire que le Glouton basique.
+
+\begin{figure}[H]
+    \centering
+    % Remplace par l'image générée par ton script distance_curve_analysis.py
+    \includegraphics[width=0.9\linewidth]{../../metaheuristics/fig_scaling_analysis.png}
+    \caption{Évolution croisée des performances mettant en évidence l'effondrement de l'AG face à la complexité combinatoire.}
+    \label{fig:scaling_analysis}
+\end{figure}
+
+\textbf{Conclusion intermédiaire :} Cette analyse démontre formellement qu'une métaheuristique seule ne peut pas absorber la charge d'un entrepôt entier. Cela justifie pleinement notre architecture finale : utiliser le \textbf{Clustering (Machine Learning)} pour découper l'entrepôt en petits lots ($< 40$ articles), afin de toujours maintenir nos métaheuristiques dans leur "zone de victoire" (Phase 1).
 
 
 \chapter{Intégration du Machine Learning}

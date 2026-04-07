@@ -1,15 +1,18 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.3)  7 APR 2026 20:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.5)  7 APR 2026 20:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**./main.tex
-(main.tex
+**"C:/Users/baouc/PycharmProjects/OC/src/Template latex memoire M1 (1)/Template
+ latex memoire M1/main.tex"
+
+(C:/Users/baouc/PycharmProjects/OC/src/Template latex memoire M1 (1)/Template l
+atex memoire M1/main.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
 Document Class: report 2025/01/22 v1.4n Standard LaTeX document class
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
 File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count275
@@ -25,15 +28,15 @@ File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 \belowcaptionskip=\skip50
 \bibindent=\dimen148
 )
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
 Package: inputenc 2024/02/08 v1.3d Input encoding file
 \inpenc@prehook=\toks17
 \inpenc@posthook=\toks18
 )
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
 )
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
 Package: babel 2025/12/11 v25.17 The multilingual framework for LuaLaTeX, pdfLa
 TeX and XeLaTeX
 \babel@savecnt=\count284
@@ -54,7 +57,7 @@ on input line 2101.
 \U@D=\dimen149
 \l@unhyphenated=\language79
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
 \bbl@readstream=\read2
 \bbl@dirlevel=\count285
 Package babel Info: Configuration files are deprecated, as
@@ -64,19 +67,21 @@ Package babel Info: Configuration files are deprecated, as
 *************************************
 * Local config file bblopts.cfg used
 *
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/fr\babel-fr
-ench.tex)
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/fr\babel
+-french.tex)
 Package babel Info: Importing font and identification data for french
 (babel)             from babel-fr.ini. Reported on input line 4320.
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/babel-french\french.ldf
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/generic/babel-french\french.l
+df
 Language: french 2025-08-15 v4.0e French support from the babel system
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/babel-french\french3.ldf
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/generic/babel-french\french3.
+ldf
 Language: french 2025-08-15 v3.7e French support from the babel system
 \FB@stdchar=\count286
 Package babel Info: Making : an active character on input line 273.
@@ -99,8 +104,9 @@ Package babel Info: Making ? an active character on input line 276.
 \leftmarginFB=\dimen156
 \parindentFFN=\dimen157
 \FBfnindent=\dimen158
-))) (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/carlisle\scalefnt.sty)
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
+)))
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/carlisle\scalefnt.sty)
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
 Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -135,17 +141,17 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2026/03/07 v6.0 Page Geometry
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks20
 )
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ))
 \Gm@cnth=\count293
@@ -161,39 +167,39 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 \Gm@layoutvoffset=\dimen166
 \Gm@dimlist=\toks21
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
 )
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+fg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 106.
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen167
 \Gin@req@width=\dimen168
-) (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
+) (C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
 Package: eso-pic 2025/12/10 v3.0d eso-pic (RN)
 \ESO@tempdima=\dimen169
 \ESO@tempdimb=\dimen170
-
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 274.
-
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
 Package xcolor Info: Model `RGB' extended on input line 1365.
@@ -203,8 +209,7 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
-))
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+)) (C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
 Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \col@sep=\dimen171
 \ar@mcellbox=\box53
@@ -214,72 +219,75 @@ Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \backup@length=\skip52
 \ar@cellbox=\box54
 )
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 )
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefinekey
-s.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefine
+keys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.s
+ty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
 )
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.st
-y
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds
+.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.s
+ty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-)) (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+))
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettitles
-tring.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettit
+lestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
 \c@section@level=\count296
-) (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+)
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count297
 )
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.s
+ty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
 \@linkdim=\dimen173
 \Hy@linkcounter=\count298
 \Hy@pagecounter=\count299
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+ (C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-)
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+) (C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
 \Hy@SavedSpaceFactor=\count300
-
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+ (C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
@@ -293,18 +301,18 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4462.
 \c@Hy@tempcnt=\count301
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4801.
 \XeTeXLinkMargin=\dimen174
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.st
-y
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc
+.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
@@ -323,17 +331,18 @@ Package hyperref Info: PDF/A mode OFF on input line 6108.
 \c@Hfootnote=\count305
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
- (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
 File: hpdftex.def 2025-07-12 v7.01o Hyperref driver for pdfTeX
 \Fld@listcount=\count306
 \c@bookmark@seq@number=\count307
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfilech
-eck.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
+echeck.sty
 Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquecoun
-ter.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquec
+ounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
@@ -341,25 +350,26 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip53
 )
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lastpage\lastpage.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/lastpage\lastpage.sty
 Package: lastpage 2025/08/14 v2.1h lastpage: 2.09 or 2e? (HMM)
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lastpage\lastpage2e.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/lastpage\lastpage2e.sty
 Package: lastpage2e 2025/08/14 v2.1h Decide which 2e lastpage version to use (H
 MM)
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lastpage\lastpagemodern.st
-y
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/lastpage\lastpagemodern
+.sty
 Package: lastpagemodern 2025-08-14 v2.1h Refers to last page's name (HMM; JPG)
 \c@lastpagecount=\count308
 ) 
-)) (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
+))
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
 Package: colortbl 2024/10/29 v1.0k Color table columns (DPC)
 \everycr=\toks23
 \minrowclearance=\skip54
 \rownum=\count309
 )
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count310
 \float@exts=\toks24
@@ -367,7 +377,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks25
 \@floatcapt=\box56
 )
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
 \lst@mode=\count311
 \lst@gtempboxa=\box57
 \lst@token=\toks26
@@ -381,36 +391,35 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \lst@lineno=\count316
 \lst@maxwidth=\dimen180
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
 File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
 )
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
 \c@lstnumber=\count317
 \lst@skipnumbers=\count318
 \lst@framebox=\box58
 )
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
 File: listings.cfg 2025/11/14 1.11b listings configuration
 ))
 Package: listings 2025/11/14 1.11b (Carsten Heinz)
-
 ==> First Aid for listings.sty no longer applied!
     Expected:
         2024/09/23 1.10c (Carsten Heinz)
     but found:
         2025/11/14 1.11b (Carsten Heinz)
     so I'm assuming it got fixed.
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks27
 \ex@=\dimen181
 ))
 (pagedegarde.tex
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
 Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 
 \f@nch@headwidth=\skip55
@@ -429,39 +438,40 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \f@nch@widthR=\skip68
 \@temptokenb=\toks28
 )
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/nomencl\nomencl.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/nomencl\nomencl.sty
 Package: nomencl 2021/11/10 v5.6 Nomenclature package
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
 Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.tex
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.tex
 \XKV@toks=\toks29
 \XKV@tempa@toks=\toks30
 )
 \XKV@depth=\count319
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-))
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+)) (C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 )
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\tocbasic.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\tocbasic.st
+y
 Package: tocbasic 2026/02/02 v3.49.2 KOMA-Script package (handling toc-files)
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrbase.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrbase.sty
 Package: scrbase 2026/02/02 v3.49.2 KOMA-Script package (KOMA-Script-independen
 t basics and keyval usage)
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile.st
+y
 Package: scrlfile 2026/02/02 v3.49.2 KOMA-Script package (file load hooks)
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile-hook.
-sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile-ho
+ok.sty
 Package: scrlfile-hook 2026/02/02 v3.49.2 KOMA-Script package (using LaTeX hook
 s)
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlogo.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlogo.sty
 Package: scrlogo 2026/02/02 v3.49.2 KOMA-Script package (logo)
 )))
 Applying: [2021/05/01] Usage of raw or classic option list on input line 254.
@@ -479,14 +489,14 @@ Package tocbasic Info: setting babel extension for `nls' on input line 188.
 ))
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 75
 .
- (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
+ (C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex
-.def
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
+tex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count320
-) (C:/Users\PC\PycharmProjects\Optimisation-combinatoire\out\main.aux
+) (C:/Users\baouc\PycharmProjects\OC\out\main.aux
 Package babel Info: 'french' activates 'french' shorthands.
 (babel)             Reported on input line 11.
 )
@@ -546,7 +556,9 @@ LaTeX Info: Redefining \degres on input line 75.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
+ii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count321
 \scratchdimen=\dimen184
@@ -560,18 +572,19 @@ LaTeX Info: Redefining \degres on input line 75.
 \makeMPintoPDFobject=\count326
 \everyMPtoPDFconversion=\toks32
 )
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base
-.sty
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
+ase.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
+fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package hyperref Info: Link coloring OFF on input line 75.
- (C:/Users\PC\PycharmProjects\Optimisation-combinatoire\out\main.out)
-(C:/Users\PC\PycharmProjects\Optimisation-combinatoire\out\main.out)
+ (C:/Users\baouc\PycharmProjects\OC\out\main.out)
+(C:/Users\baouc\PycharmProjects\OC\out\main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
@@ -609,7 +622,7 @@ Package tocbasic Info: setting babel extension for `lol' on input line 75.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<logo_Paris_Nanterre_couleur_RVB.png, id=83, 619.31375pt x 132.495pt>
+<logo_Paris_Nanterre_couleur_RVB.png, id=119, 619.31375pt x 132.495pt>
 File: logo_Paris_Nanterre_couleur_RVB.png Graphic file (type png)
 <use logo_Paris_Nanterre_couleur_RVB.png>
 Package pdftex.def Info: logo_Paris_Nanterre_couleur_RVB.png  used on input lin
@@ -618,25 +631,25 @@ e 76.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 7
 6.
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 7
 6.
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
 76.
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
 76.
 
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -645,7 +658,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 76.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 76.
-<bordure.png, id=85, 63.23625pt x 522.95375pt>
+<bordure.png, id=121, 63.23625pt x 522.95375pt>
 File: bordure.png Graphic file (type png)
 <use bordure.png>
 Package pdftex.def Info: bordure.png  used on input line 76.
@@ -653,15 +666,15 @@ Package pdftex.def Info: bordure.png  used on input line 76.
  [1
 
 
-{C:/Users/PC/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/PC/AppD
-ata/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./bordure.png> <./logo
-_Paris_Nanterre_couleur_RVB.png>]
+{C:/Users/baouc/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/baou
+c/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./bordure.png> <
+./logo_Paris_Nanterre_couleur_RVB.png>]
 \@nomenclaturefile=\write4
 \openout4 = `main.nlo'.
 
 Package nomencl Info: Writing nomenclature file main.nlo on input line 76.
 
-(C:/Users\PC\PycharmProjects\Optimisation-combinatoire\out\main.toc)
+(C:/Users\baouc\PycharmProjects\OC\out\main.toc)
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
@@ -692,173 +705,245 @@ Underfull \hbox (badness 10000) in paragraph at lines 103--106
 
 [3
 
-{C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]
+{C:/Users/baouc/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]
 Chapitre 2.
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-17.
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+18.
+(C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [4
-
-{C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}{C:/Us
-ers/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-58.
-
-(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 174--174
-[]|\T1/lmr/m/n/12 Calinski-
+<../../env/fig_warehouse_plan.png, id=171, 803.0pt x 803.0pt>
+File: ../../env/fig_warehouse_plan.png Graphic file (type png)
+<use ../../env/fig_warehouse_plan.png>
+Package pdftex.def Info: ../../env/fig_warehouse_plan.png  used on input line 1
+30.
+(pdftex.def)             Requested size: 308.71106pt x 308.72098pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4
+
+{C:/Users/baouc/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}{C:
+/Users/baouc/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:
+/Users/baouc/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
+Overfull \hbox (66.46652pt too wide) in paragraph at lines 143--157
+ [][] 
  []
 
-
-Underfull \hbox (badness 1975) in paragraph at lines 174--175
-[]|\T1/lmr/m/n/12 Densit� intra-cluster vs dis-per-sion inter-
- []
-
-
-Underfull \hbox (badness 2401) in paragraph at lines 176--176
-[]|\T1/lmr/m/n/12 Temps d'ex�-cu-
- []
-
-[5{C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}
-pdfTeX warning (ext4): destination with the same identifier (name{table.2.1}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.214 \item \textbf
-                   {GMM (Gaussian Mixture Model)} donne les scores les plus ...
-
-pdfTeX warning (ext4): destination with the same identifier (name{table.2.2}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.214 \item \textbf
-                   {GMM (Gaussian Mixture Model)} donne les scores les plus ...
-]
-<../../ml/fig1_comparaison_clusterings.png, id=145, 1004.0712pt x 710.655pt>
-File: ../../ml/fig1_comparaison_clusterings.png Graphic file (type png)
-<use ../../ml/fig1_comparaison_clusterings.png>
-Package pdftex.def Info: ../../ml/fig1_comparaison_clusterings.png  used on inp
-ut line 222.
-(pdftex.def)             Requested size: 432.19548pt x 305.89015pt.
-<../../ml/fig2_metriques_comparaison.png, id=146, 1149.093pt x 358.4592pt>
-File: ../../ml/fig2_metriques_comparaison.png Graphic file (type png)
-<use ../../ml/fig2_metriques_comparaison.png>
-Package pdftex.def Info: ../../ml/fig2_metriques_comparaison.png  used on input
- line 229.
-(pdftex.def)             Requested size: 441.01773pt x 137.57784pt.
- [6
+[5
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.233 \end{figure}
-                   <../../ml/fig1_comparaison_clusterings.png>]
-<../../ml/fig3_best_clustering_detail.png, id=154, 1004.0712pt x 427.3566pt>
-File: ../../ml/fig3_best_clustering_detail.png Graphic file (type png)
-<use ../../ml/fig3_best_clustering_detail.png>
-Package pdftex.def Info: ../../ml/fig3_best_clustering_detail.png  used on inpu
-t line 247.
-(pdftex.def)             Requested size: 441.01773pt x 187.70491pt.
+l.163 \section
+              {Optimisation par Algorithme Génétique (AG)}
+pdfTeX warning (ext4): destination with the same identifier (name{table.2.1}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.163 \section
+              {Optimisation par Algorithme Génétique (AG)} <../../env/fig_war
+ehouse_plan.png>]
+<../../metaheuristics/fig_convergence_ag.png, id=194, 803.0pt x 501.875pt>
+File: ../../metaheuristics/fig_convergence_ag.png Graphic file (type png)
+<use ../../metaheuristics/fig_convergence_ag.png>
+Package pdftex.def Info: ../../metaheuristics/fig_convergence_ag.png  used on i
+nput line 174.
+(pdftex.def)             Requested size: 352.81552pt x 220.5117pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \hbox (74.40248pt too wide) in paragraph at lines 184--196
+ [][] 
+ []
 
- [7
+[6
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.2}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.251 \section
-              {Intégration avec la métaheuristique} <../../ml/fig2_metriques_
-comparaison.png>] [8
+l.202 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{table.2.2}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.202 
+       <../../metaheuristics/fig_convergence_ag.png>]
+<../../metaheuristics/fig_scaling_analysis.png, id=204, 1003.75pt x 602.25pt>
+File: ../../metaheuristics/fig_scaling_analysis.png Graphic file (type png)
+<use ../../metaheuristics/fig_scaling_analysis.png>
+Package pdftex.def Info: ../../metaheuristics/fig_scaling_analysis.png  used on
+ input line 206.
+(pdftex.def)             Requested size: 396.91325pt x 238.14804pt.
+ [7
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.3}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.257 \chapter
-              {Métaheuristiques et Optimisation} <../../ml/fig3_best_clusterin
-g_detail.png>]
+l.214 \chapter
+              {Intégration du Machine Learning} <../../metaheuristics/fig_scal
+ing_analysis.png>]
 Chapitre 3.
-[9
+[8
 
-{C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}]
-Overfull \hbox (1.00073pt too wide) in paragraph at lines 320--321
-[]\T1/lmr/m/n/12 L'introduction du clus-te-ring (K-Means) per-met de r�-duire s
-i-gni-fi-ca-ti-ve-ment le temps
+]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
+57.
+ (C:\Users\baouc\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Underfull \hbox (badness 10000) in paragraph at lines 273--273
+[]|\T1/lmr/m/n/12 Calinski-
  []
 
-<../../fig_barres_performances.png, id=180, 722.7pt x 433.62pt>
-File: ../../fig_barres_performances.png Graphic file (type png)
-<use ../../fig_barres_performances.png>
-Package pdftex.def Info: ../../fig_barres_performances.png  used on input line 
-334.
-(pdftex.def)             Requested size: 374.86775pt x 224.9213pt.
-[10
+
+Underfull \hbox (badness 1975) in paragraph at lines 273--274
+[]|\T1/lmr/m/n/12 Densit� intra-cluster vs dis-per-sion inter-
+ []
+
+
+Underfull \hbox (badness 2401) in paragraph at lines 275--275
+[]|\T1/lmr/m/n/12 Temps d'ex�-cu-
+ []
+
+[9
 pdfTeX warning (ext4): destination with the same identifier (name{table.3.1}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.342     \item l
-                 ’AG sans ML est le moins performant,
+l.313 \item \textbf
+                   {GMM (Gaussian Mixture Model)} donne les scores les plus ...
+
+pdfTeX warning (ext4): destination with the same identifier (name{table.3.2}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.313 \item \textbf
+                   {GMM (Gaussian Mixture Model)} donne les scores les plus ...
+]
+<../../ml/fig1_comparaison_clusterings.png, id=227, 1004.0712pt x 710.655pt>
+File: ../../ml/fig1_comparaison_clusterings.png Graphic file (type png)
+<use ../../ml/fig1_comparaison_clusterings.png>
+Package pdftex.def Info: ../../ml/fig1_comparaison_clusterings.png  used on inp
+ut line 321.
+(pdftex.def)             Requested size: 432.19548pt x 305.89015pt.
+<../../ml/fig2_metriques_comparaison.png, id=228, 1149.093pt x 358.4592pt>
+File: ../../ml/fig2_metriques_comparaison.png Graphic file (type png)
+<use ../../ml/fig2_metriques_comparaison.png>
+Package pdftex.def Info: ../../ml/fig2_metriques_comparaison.png  used on input
+ line 328.
+(pdftex.def)             Requested size: 441.01773pt x 137.57784pt.
+ [10
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.342     \item l
-                 ’AG sans ML est le moins performant, <../../fig_barres_perfo
-rmances.png>]
-<../../fig_scatter_pareto.png, id=190, 578.16pt x 433.62pt>
-File: ../../fig_scatter_pareto.png Graphic file (type png)
-<use ../../fig_scatter_pareto.png>
-Package pdftex.def Info: ../../fig_scatter_pareto.png  used on input line 352.
-(pdftex.def)             Requested size: 330.76329pt x 248.07243pt.
+l.332 \end{figure}
+                   <../../ml/fig1_comparaison_clusterings.png>]
+<../../ml/fig3_best_clustering_detail.png, id=236, 1004.0712pt x 427.3566pt>
+File: ../../ml/fig3_best_clustering_detail.png Graphic file (type png)
+<use ../../ml/fig3_best_clustering_detail.png>
+Package pdftex.def Info: ../../ml/fig3_best_clustering_detail.png  used on inpu
+t line 346.
+(pdftex.def)             Requested size: 441.01773pt x 187.70491pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [11
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.2}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.373 \chapter
-              {Conclusion} <../../fig_scatter_pareto.png>]
+l.350 \section
+              {Intégration avec la métaheuristique} <../../ml/fig2_metriques_
+comparaison.png>] [12
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.3}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.356 \chapter
+              {Métaheuristiques et Optimisation} <../../ml/fig3_best_clusterin
+g_detail.png>]
 Chapitre 4.
-[12
+[13
+
+{C:/Users/baouc/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}
+]
+Overfull \hbox (1.00073pt too wide) in paragraph at lines 419--420
+[]\T1/lmr/m/n/12 L'introduction du clus-te-ring (K-Means) per-met de r�-duire s
+i-gni-fi-ca-ti-ve-ment le temps
+ []
+
+<../../fig_barres_performances.png, id=261, 722.7pt x 433.62pt>
+File: ../../fig_barres_performances.png Graphic file (type png)
+<use ../../fig_barres_performances.png>
+Package pdftex.def Info: ../../fig_barres_performances.png  used on input line 
+433.
+(pdftex.def)             Requested size: 374.86775pt x 224.9213pt.
+[14
+pdfTeX warning (ext4): destination with the same identifier (name{table.4.1}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.441     \item l
+                 ’AG sans ML est le moins performant,
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.441     \item l
+                 ’AG sans ML est le moins performant, <../../fig_barres_perfo
+rmances.png>]
+<../../fig_scatter_pareto.png, id=271, 578.16pt x 433.62pt>
+File: ../../fig_scatter_pareto.png Graphic file (type png)
+<use ../../fig_scatter_pareto.png>
+Package pdftex.def Info: ../../fig_scatter_pareto.png  used on input line 451.
+(pdftex.def)             Requested size: 330.76329pt x 248.07243pt.
+ [15
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.472 \chapter
+              {Conclusion} <../../fig_scatter_pareto.png>]
+Chapitre 5.
+[16
 
 ]
-Chapitre 5.
-[13
+Chapitre 6.
+[17
 
 ] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
-(C:/Users\PC\PycharmProjects\Optimisation-combinatoire\out\main.aux)
+(C:/Users\baouc\PycharmProjects\OC\out\main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 71B4238A28024A429157B4F382186D3A;3998.
+(rerunfilecheck)             Checksum: 3186DC61F91ED2A94A4334E2B82DE754;6352.
  ) 
 Here is how much of TeX's memory you used:
- 15386 strings out of 467870
- 256216 string characters out of 5419808
+ 15444 strings out of 467871
+ 258273 string characters out of 5418377
  779925 words of memory out of 5000000
- 43974 multiletter control sequences out of 15000+600000
+ 44010 multiletter control sequences out of 15000+600000
  671954 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 115i,13n,110p,543b,556s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><
-C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:
-/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Us
-ers/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users
-/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/PC/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/PC/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/PC/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/PC/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on C:/Users\PC\PycharmProjects\Optimisation-combinatoire\out\mai
-n.pdf (13 pages, 917959 bytes).
+ 115i,13n,110p,598b,556s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/baouc/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pf
+b><C:/Users/baouc/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.p
+fb><C:/Users/baouc/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.p
+fb><C:/Users/baouc/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.p
+fb><C:/Users/baouc/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pf
+b><C:/Users/baouc/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb
+><C:/Users/baouc/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><
+C:/Users/baouc/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><
+C:/Users/baouc/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><
+C:/Users/baouc/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
+Output written on C:/Users\baouc\PycharmProjects\OC\out\main.pdf (17 pages, 108
+1996 bytes).
 PDF statistics:
- 272 PDF objects out of 1000 (max. 8388607)
- 50 named destinations out of 1000 (max. 500000)
- 196 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 359 PDF objects out of 1000 (max. 8388607)
+ 69 named destinations out of 1000 (max. 500000)
+ 283 words of extra memory for PDF output out of 10000 (max. 10000000)
 
