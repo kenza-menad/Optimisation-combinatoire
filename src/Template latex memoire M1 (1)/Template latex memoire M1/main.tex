@@ -210,122 +210,6 @@ Les résultats révèlent un comportement critique : sur un petit volume (25 art
 
 \textbf{Conclusion intermédiaire :} Cette analyse démontre formellement qu'une métaheuristique seule ne peut pas absorber la charge d'un entrepôt entier. Cela justifie pleinement notre architecture finale : utiliser le \textbf{Clustering (Machine Learning)} pour découper l'entrepôt en petits lots ($< 40$ articles), afin de toujours maintenir nos métaheuristiques dans leur "zone de victoire" (Phase 1).
 
-\chapter{Métaheuristiques et Optimisation}
-
-Dans la continuité du pré-traitement par clustering K-Means, qui a permis de diviser notre problème initial de 119 articles en 4 sous-TSP de taille plus réduite, nous appliquons des métaheuristiques afin de déterminer la tournée optimale du préparateur au sein de chaque lot.
-
-\section{Implémentation des Algorithmes}
-
-\subsection{Algorithme des Colonies de Fourmis (ACO)}
-
-L’ACO est une métaheuristique bio-inspirée particulièrement adaptée au problème du Voyageur de Commerce (TSP). Dans notre implémentation, chaque "fourmi" artificielle construit une solution probabiliste en tenant compte de deux facteurs pour se déplacer d’un point $i$ vers un article $j$ :
-
-\begin{itemize}
-    \item \textbf{La visibilité ($\eta_{ij}$)} : l’inverse de la distance de Manhattan entre les deux points.
-    \item \textbf{La trace de phéromone ($\tau_{ij}$)} : l’historique des meilleurs chemins trouvés.
-\end{itemize}
-
-La probabilité de transition est donnée par :
-
-$$
-P_{ij} = \frac{(\tau_{ij})^\alpha \cdot (\eta_{ij})^\beta}{\sum_{k} (\tau_{ik})^\alpha \cdot (\eta_{ik})^\beta}
-$$
-
-Ce mécanisme permet une convergence progressive vers des solutions de qualité.
-
-\subsection{Algorithme Génétique (AG)}
-
-L’algorithme génétique repose sur une population de solutions (chromosomes).
-Afin de respecter les contraintes du TSP, nous avons utilisé l’opérateur \textbf{Order Crossover (OX)}, garantissant l’absence de doublons.
-Une mutation par inversion est également introduite afin de maintenir la diversité et éviter les minima locaux.
-
-\section{Résultats et Comparaison des Approches}
-
-Nous avons comparé quatre scénarios :
-
-\begin{enumerate}
-    \item \textbf{ACO sans ML}
-    \item \textbf{AG sans ML}
-    \item \textbf{ACO avec ML (K-Means, k=4)}
-    \item \textbf{AG avec ML (K-Means, k=4)}
-\end{enumerate}
-
-\subsection{Tableau de synthèse}
-
-\begin{table}[H]
-\centering
-\begin{tabular}{|l|c|c|}
-\hline
-Approche & Distance & Temps (s) \\
-\hline
-ACO sans ML & 2588 & 3.32 \\
-AG sans ML & 12052 & 5.37 \\
-ACO avec ML & 3334 & 1.34 \\
-AG avec ML & 5600 & 4.42 \\
-\hline
-\end{tabular}
-\caption{Comparaison des performances}
-\end{table}
-
-\subsection{Analyse des performances}
-
-L’ACO sans Machine Learning produit la meilleure distance (2588), car il optimise une tournée globale. Cependant, son temps de calcul reste élevé.
-
-L’algorithme génétique sans Machine Learning est fortement pénalisé par l’explosion combinatoire, ce qui entraîne une distance très élevée et un temps important.
-
-L’introduction du clustering (K-Means) permet de réduire significativement le temps de calcul. L’ACO avec ML divise le temps par plus de deux (1.34 s), au prix d’une légère augmentation de la distance (3334), due aux retours au dépôt.
-
-L’AG avec ML améliore ses performances par rapport à sa version sans ML, mais reste moins efficace que l’ACO.
-
-\subsection{Visualisation des performances}
-
-Afin de mieux interpréter ces résultats, nous avons représenté graphiquement les performances des différentes approches.
-
-\paragraph{Comparaison globale}
-
-La figure suivante montre simultanément la distance et le temps :
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.85\textwidth]{../../fig_barres_performances.png}
-\caption{Comparaison des distances et temps de calcul}
-\end{figure}
-
-On observe que :
-\begin{itemize}
-    \item l’ACO sans ML minimise la distance,
-    \item l’ACO avec ML réduit fortement le temps,
-    \item l’AG sans ML est le moins performant,
-    \item l’AG avec ML améliore ses résultats mais reste inférieur à l’ACO.
-\end{itemize}
-
-\paragraph{Compromis Temps / Distance}
-
-La figure suivante permet d’analyser le compromis :
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.75\textwidth]{../../fig_scatter_pareto.png}
-\caption{Compromis temps / distance}
-\end{figure}
-
-Dans ce plan, la zone idéale se situe en bas à gauche.
-
-On observe que :
-\begin{itemize}
-    \item l’ACO avec ML est le meilleur compromis,
-    \item l’ACO sans ML est très performant mais plus lent,
-    \item l’AG reste globalement moins efficace.
-\end{itemize}
-
-\section{Interprétation}
-
-L’augmentation de la distance dans les approches hybrides ne constitue pas une faiblesse, mais reflète une modélisation plus réaliste des contraintes logistiques (retours au dépôt).
-
-L’ACO s’impose comme la métaheuristique la plus adaptée au problème de routage, grâce à son mécanisme d’apprentissage progressif.
-
-À l’inverse, l’algorithme génétique nécessite un réglage plus fin pour atteindre des performances comparables.
-
 
 \chapter{Intégration du Machine Learning}
 
@@ -468,6 +352,122 @@ Le module ML transmet à la métaheuristique un dictionnaire Python structuré c
 1 TSP de 4 nœuds + 4 sous-TSP d'environ 30 articles chacun.
 
 \textbf{Gain de complexité :} Sans clustering : 119! permutations. Avec clustering : 4! + 4 × 30! réduction drastique de l'espace de recherche.
+
+\chapter{Métaheuristiques et Optimisation}
+
+Dans la continuité du pré-traitement par clustering K-Means, qui a permis de diviser notre problème initial de 119 articles en 4 sous-TSP de taille plus réduite, nous appliquons des métaheuristiques afin de déterminer la tournée optimale du préparateur au sein de chaque lot.
+
+\section{Implémentation des Algorithmes}
+
+\subsection{Algorithme des Colonies de Fourmis (ACO)}
+
+L’ACO est une métaheuristique bio-inspirée particulièrement adaptée au problème du Voyageur de Commerce (TSP). Dans notre implémentation, chaque "fourmi" artificielle construit une solution probabiliste en tenant compte de deux facteurs pour se déplacer d’un point $i$ vers un article $j$ :
+
+\begin{itemize}
+    \item \textbf{La visibilité ($\eta_{ij}$)} : l’inverse de la distance de Manhattan entre les deux points.
+    \item \textbf{La trace de phéromone ($\tau_{ij}$)} : l’historique des meilleurs chemins trouvés.
+\end{itemize}
+
+La probabilité de transition est donnée par :
+
+$$
+P_{ij} = \frac{(\tau_{ij})^\alpha \cdot (\eta_{ij})^\beta}{\sum_{k} (\tau_{ik})^\alpha \cdot (\eta_{ik})^\beta}
+$$
+
+Ce mécanisme permet une convergence progressive vers des solutions de qualité.
+
+\subsection{Algorithme Génétique (AG)}
+
+L’algorithme génétique repose sur une population de solutions (chromosomes).
+Afin de respecter les contraintes du TSP, nous avons utilisé l’opérateur \textbf{Order Crossover (OX)}, garantissant l’absence de doublons.
+Une mutation par inversion est également introduite afin de maintenir la diversité et éviter les minima locaux.
+
+\section{Résultats et Comparaison des Approches}
+
+Nous avons comparé quatre scénarios :
+
+\begin{enumerate}
+    \item \textbf{ACO sans ML}
+    \item \textbf{AG sans ML}
+    \item \textbf{ACO avec ML (K-Means, k=4)}
+    \item \textbf{AG avec ML (K-Means, k=4)}
+\end{enumerate}
+
+\subsection{Tableau de synthèse}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|c|}
+\hline
+Approche & Distance & Temps (s) \\
+\hline
+ACO sans ML & 2588 & 3.32 \\
+AG sans ML & 12052 & 5.37 \\
+ACO avec ML & 3334 & 1.34 \\
+AG avec ML & 5600 & 4.42 \\
+\hline
+\end{tabular}
+\caption{Comparaison des performances}
+\end{table}
+
+\subsection{Analyse des performances}
+
+L’ACO sans Machine Learning produit la meilleure distance (2588), car il optimise une tournée globale. Cependant, son temps de calcul reste élevé.
+
+L’algorithme génétique sans Machine Learning est fortement pénalisé par l’explosion combinatoire, ce qui entraîne une distance très élevée et un temps important.
+
+L’introduction du clustering (K-Means) permet de réduire significativement le temps de calcul. L’ACO avec ML divise le temps par plus de deux (1.34 s), au prix d’une légère augmentation de la distance (3334), due aux retours au dépôt.
+
+L’AG avec ML améliore ses performances par rapport à sa version sans ML, mais reste moins efficace que l’ACO.
+
+\subsection{Visualisation des performances}
+
+Afin de mieux interpréter ces résultats, nous avons représenté graphiquement les performances des différentes approches.
+
+\paragraph{Comparaison globale}
+
+La figure suivante montre simultanément la distance et le temps :
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{../../fig_barres_performances.png}
+\caption{Comparaison des distances et temps de calcul}
+\end{figure}
+
+On observe que :
+\begin{itemize}
+    \item l’ACO sans ML minimise la distance,
+    \item l’ACO avec ML réduit fortement le temps,
+    \item l’AG sans ML est le moins performant,
+    \item l’AG avec ML améliore ses résultats mais reste inférieur à l’ACO.
+\end{itemize}
+
+\paragraph{Compromis Temps / Distance}
+
+La figure suivante permet d’analyser le compromis :
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth]{../../fig_scatter_pareto.png}
+\caption{Compromis temps / distance}
+\end{figure}
+
+Dans ce plan, la zone idéale se situe en bas à gauche.
+
+On observe que :
+\begin{itemize}
+    \item l’ACO avec ML est le meilleur compromis,
+    \item l’ACO sans ML est très performant mais plus lent,
+    \item l’AG reste globalement moins efficace.
+\end{itemize}
+
+\section{Interprétation}
+
+L’augmentation de la distance dans les approches hybrides ne constitue pas une faiblesse, mais reflète une modélisation plus réaliste des contraintes logistiques (retours au dépôt).
+
+L’ACO s’impose comme la métaheuristique la plus adaptée au problème de routage, grâce à son mécanisme d’apprentissage progressif.
+
+À l’inverse, l’algorithme génétique nécessite un réglage plus fin pour atteindre des performances comparables.
 
 
 \chapter{Conclusion}
