@@ -77,7 +77,7 @@ Commerce (TSP) et du Clustering}
 \tableofcontents
 
 \chapter{Introduction}
-La préparation de commandes, ou \textit{Order Picking}, est l'une des
+La préparation de commandes, ou Order Picking, est l'une des
 opérations les plus coûteuses dans la gestion d'un entrepôt. Elle représente
 en moyenne 55\% des coûts opérationnels d'un entrepôt, et consiste à collecter
 des articles dispersés dans différentes zones pour constituer des commandes
@@ -105,7 +105,7 @@ combinant deux familles de méthodes complémentaires :\\
     chaque batch, et comparer leurs performances.\\
 \end{itemize}
 
-L'idée centrale est d'utiliser le clustering \textbf{en amont} de la
+L'idée centrale est d'utiliser le clustering en amont de la
 métaheuristique : plutôt que de résoudre un TSP global de 119 points,
 on résout 4 sous-TSP d'environ 30 articles chacun, ce qui réduit
 drastiquement la complexité du problème.
@@ -261,20 +261,34 @@ le score est maximal pour $k = 4$ avec un Silhouette Score de 0,404.
 Pour comparer les algorithmes de façon rigoureuse, nous utilisons trois métriques complémentaires :
 \begin{table}[h]
 \centering
-\begin{tabular}{|p{3cm}|p{2cm}|p{8cm}|}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{3cm}|p{2cm}|p{9cm}|}
 \hline
 \rowcolor{gray!30}
 \textbf{Métrique} & \textbf{Sens} & \textbf{Ce que ça mesure dans notre contexte} \\
 \hline
-Silhouette Score & $\uparrow$ mieux & Séparation entre clusters. Score élevé = articles d'un même batch proches $\rightarrow$ tournées locales courtes. \\
+Silhouette Score & $\uparrow$ mieux &
+Mesure si chaque article est bien placé dans son cluster.
+Un score élevé signifie que les articles d'un même batch
+sont proches entre eux et éloignés des autres batches,
+ce qui produit des tournées locales courtes. \\
 \hline
-Davies-Bouldin & $\downarrow$ mieux & Compacité des clusters par rapport à leur distance mutuelle. Index faible = clusters denses et bien séparés. \\
+Davies-Bouldin & $\downarrow$ mieux &
+Mesure la compacité des clusters. Un index faible signifie
+que les articles sont serrés à l'intérieur de leur batch
+et que les batches sont bien éloignés les uns des autres. \\
 \hline
-Calinski-Harabasz & $\uparrow$ mieux & Densité intra-cluster vs dispersion inter-clusters. Score élevé = clusters bien distincts. \\
+Calinski-Harabasz & $\uparrow$ mieux &
+Compare la dispersion entre les clusters et la dispersion
+à l'intérieur des clusters. Un score élevé indique que
+les batches sont bien distincts et denses géographiquement. \\
 \hline
-Temps d'exécution (ms) & $\downarrow$ mieux & Durée du pré-traitement ML. Doit rester négligeable devant la métaheuristique. \\
+Temps d'exécution (ms) & $\downarrow$ mieux &
+Durée du pré-traitement ML avant la métaheuristique.
+Doit rester très court pour ne pas alourdir le pipeline. \\
 \hline
-\end{tabular}
+\end{tabular}%
+}
 \caption{Métriques d'évaluation des algorithmes de clustering}
 \label{tab:metriques}
 \end{table}
@@ -290,13 +304,14 @@ Les expériences ont été menées sur un entrepôt de 200 × 200 unités, 119 a
 \textbf{Algorithme} & \textbf{k} & \textbf{Silhouette ↑} & \textbf{Davies-Bouldin ↓} & \textbf{Calinski-Harabasz ↑} & \textbf{Bruit} & \textbf{Temps (ms)} \\
 \hline
 \rowcolor{blue!15}
-\textbf{K-Means} & \textbf{4} & \textcolor{green!60!black}{\textbf{0,404}} & \textbf{0,800} & \textcolor{green!60!black}{\textbf{115,33}} & 0 \% & 37,37 \\
+\textbf{K-Means} & \textbf{4} & \textcolor{green!60!black}{\textbf{0,404}} & \textbf{0,800} & \textcolor{green!60!black}{\textbf{115,33}} & 0 \% & 33,38
+ \\
 \hline
-Agglomerative & 4 & 0,361 & \textcolor{green!60!black}{0,810} & 96,40 & 0 \% & \textcolor{red}{39,25} \\
+Agglomerative & 4 & 0,361 & \textcolor{green!60!black}{0,810} & 96,40 & 0 \% & \textcolor{red}{37,42} \\
 \hline
-GMM (EM) & 4 & \textcolor{red}{0,390} & \textcolor{red}{0,831} & \textcolor{red}{109,21} & 0 \% & 30,05 \\
+GMM (EM) & 4 & \textcolor{red}{0,390} & \textcolor{red}{0,831} & \textcolor{red}{109,21} & 0 \% & 24,45\\
 \hline
-DBSCAN & 1 & \textcolor{gray}{N/A} & \textcolor{gray}{N/A} & \textcolor{gray}{N/A} & 0,8 \% & \textcolor{green!60!black}{8,83} \\
+DBSCAN & 1 & \textcolor{gray}{N/A} & \textcolor{gray}{N/A} & \textcolor{gray}{N/A} & 0,8 \% & \textcolor{green!60!black}{7,97} \\
 \hline
 \end{tabular}%
 }
@@ -306,23 +321,23 @@ DBSCAN & 1 & \textcolor{gray}{N/A} & \textcolor{gray}{N/A} & \textcolor{gray}{N/
 \end{table}
 
 \begin{itemize}
-\item \textbf{K-Means} obtient le meilleur Silhouette Score (0,404) et le meilleur Calinski-Harabasz (115,33), confirmant que ses clusters sont à la fois compacts et bien séparés géographiquement. Son temps d'exécution de 37,4 ms est raisonnable et son partitionnement est déterministe (grâce à la graine aléatoire fixée). C'est l'algorithme retenu pour notre pipeline.
+\item \textbf{K-Means} obtient le meilleur Silhouette Score (0,404) et le meilleur Calinski-Harabasz (115,33), confirmant que ses clusters sont à la fois compacts et bien séparés géographiquement. Son temps d'exécution de 33,38 ms est raisonnable et son partitionnement est déterministe (grâce à la graine aléatoire fixée). C'est l'algorithme retenu pour notre pipeline.
 
-\item \textbf{Agglomerative Clustering} présente le meilleur Davies-Bouldin (0,810), ce qui signifie que ses clusters sont plus compacts en termes de dispersion interne. Cependant, son temps d'exécution est légèrement plus élevé que K-Means (39,25 ms) pour un gain de Silhouette négligeable ($-$0,043). Dans notre contexte où le pré-traitement doit être rapide, ce rapport coût/bénéfice est défavorable.
+\item \textbf{Agglomerative Clustering} présente le meilleur Davies-Bouldin (0,810), ce qui signifie que ses clusters sont plus compacts en termes de dispersion interne. Cependant, son temps d'exécution est légèrement plus élevé que K-Means (37,42 ms) pour un gain de Silhouette négligeable ($-$0,043). Dans notre contexte où le pré-traitement doit être rapide, ce rapport coût/bénéfice est défavorable.
 
 \item \textbf{GMM (Gaussian Mixture Model)} donne les scores les plus faibles sur toutes les métriques de qualité (Silhouette 0,390, Davies-Bouldin 0,831, Calinski-Harabasz 109,21). Cela s'explique par le fait que le modèle gaussien n'est pas adapté à une distribution spatiale uniforme : les articles sont répartis aléatoirement dans l'entrepôt et ne suivent pas naturellement des distributions elliptiques gaussiennes.
 
 \item \textbf{DBSCAN a échoué dans cette configuration :} il n'a trouvé qu'un seul cluster (k=1), regroupant tous les articles en un seul batch, ce qui rend son utilisation impossible pour notre pipeline. Ce résultat illustre une limitation connue de DBSCAN : sa sensibilité au paramètre eps. Avec une distribution uniforme des articles, la densité est homogène sur tout l'entrepôt, rendant difficile la détection de zones denses distinctes.
 \end{itemize}
 \section{Visualisations}
-La figure 1 montre côte à côte les résultats des quatre algorithmes sur les mêmes données. Pour K-Means et Agglomerative, on observe 4 zones géographiquement cohérentes. Pour GMM, les frontières entre clusters sont moins nettes, ce qui se reflète dans le Silhouette Score plus bas. DBSCAN regroupe tout en un seul cluster (orange), ce qui confirme l'échec de l'algorithme.
+La figure 1 montre côte à côte les résultats des quatre algorithmes sur les mêmes données. Pour K-Means et Agglomerative et GMM  produisent des partitionnements visuellement similaires sur ces données. Les différences s'observent principalement dans les métriques quantitatives, notamment le Silhouette Score légèrement inférieur pour GMM (0,404, 0,361 , 0,390 respectivement). DBSCAN regroupe tout en un seul cluster (orange), ce qui confirme l'échec de l'algorithme.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.98\linewidth]{../../ml/fig1_comparaison_clusterings.png}
     \caption{Comparaison des quatre clusterings sur 119 articles (entrepôt 200×200).}
     \label{fig:comparaison_clusterings}
 \end{figure}
-La figure 2 montre que K-Means domine sur les métriques de qualité (Silhouette et Calinski-Harabasz), tout en maintenant un temps d'exécution modéré. DBSCAN apparaît comme le plus rapide (8,83 ms), mais ses métriques de qualité sont toutes à N/A, ce qui le disqualifie.
+La figure 2 montre que K-Means domine sur les métriques de qualité (Silhouette et Calinski-Harabasz), tout en maintenant un temps d'exécution modéré. DBSCAN apparaît comme le plus rapide (7,97 ms), mais ses métriques de qualité sont toutes à N/A, ce qui le disqualifie.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{../../ml/fig2_metriques_comparaison.png}
@@ -336,11 +351,11 @@ Au terme de la comparaison, K-Means est retenu pour cinq raisons :
     \item Meilleure qualité de clustering (Silhouette 0,404 et Calinski-Harabasz 115,33) : les batches sont géographiquement cohérents.
     \item Résultats reproductibles grâce à la graine aléatoire fixée (seed=42), comme exigé dans le cahier des charges.
    \item\textbf{Intégration directe :} K-Means fournit nativement des labels et des centroïdes, exactement ce dont la métaheuristique a besoin.
-   \item Pré-traitement rapide (37,4 ms), négligeable devant le temps de l'ACO/AG.
+   \item Pré-traitement rapide (33,38 ms), négligeable devant le temps de l'ACO/AG.
    \item \textbf {Cohérence avec la distance de Manhattan :} K-Means minimise la distance euclidienne, très proche de la distance de Manhattan dans un entrepôt à grille orthogonale.
 \end{itemize}
 \space La figure 3 présente en détail le clustering K-Means retenu. À gauche, la carte de l'entrepôt montre les 4 clusters avec leurs centroïdes et le nombre d'articles par cluster entre parenthèses. À droite, le diagramme en barres montre la distribution des tailles de clusters, avec la moyenne (environ 30 articles par batch) matérialisée par la ligne pointillée rouge.
-On observe que les clusters sont globalement équilibrés (de 23 à 39 articles), ce qui est favorable pour la métaheuristique : des batches de taille similaire garantissent des sous-TSP comparables en complexité, évitant qu'un seul batch ne concentre l'essentiel de la distance totale parcourue. Le cluster C0 (30 articles) est légèrement sur-représenté, ce qui pourrait être optimisé en ajustant k ou en ajoutant une contrainte de taille dans le clustering.
+On observe que les clusters sont globalement équilibrés (de 23 à 39 articles), ce qui est favorable pour la métaheuristique : des batches de taille similaire garantissent des sous-TSP comparables en complexité, évitant qu'un seul batch ne concentre l'essentiel de la distance totale parcourue. Le cluster C2 (39 articles) est légèrement sur-représenté, ce qui pourrait être optimisé en ajustant k ou en ajoutant une contrainte de taille dans le clustering.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{../../ml/fig3_best_clustering_detail.png}
@@ -348,7 +363,7 @@ On observe que les clusters sont globalement équilibrés (de 23 à 39 articles)
     \label{fig:best_clustering}
 \end{figure}
 \section{Intégration avec la métaheuristique}
-Le module ML transmet à la métaheuristique un dictionnaire Python structuré contenant : les batches (articles par cluster), les centroïdes, la matrice de distances de Manhattan entre centroïdes, et les coordonnées du dépôt. La métaheuristique n'a donc plus à traiter 119 points d'un seul coup, mais
+Le module ML transmet à la métaheuristique les batches (articles par cluster), les centroïdes, la matrice de distances de Manhattan entre centroïdes, et les coordonnées du dépôt. La métaheuristique n'a donc plus à traiter 119 points d'un seul coup, mais
 1 TSP de 4 nœuds + 4 sous-TSP d'environ 30 articles chacun.
 
 \textbf{Gain de complexité :} Sans clustering : 119! permutations. Avec clustering : 4! + 4 × 30! réduction drastique de l'espace de recherche.
