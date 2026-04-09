@@ -94,6 +94,6 @@ Lors de l'exécution des scripts principaux, le module `ml` génère automatique
 | :--- | :--- |
 | **Lyna** | Modélisation de l'environnement (Warehouse Environment), Algorithme Glouton (Baseline), Algorithme Génétique & Intégration globale |
 | **Kenza** | Comparaison de 4 algorithmes de clustering (K-Means, Agglomerative, GMM, DBSCAN), évaluation avec 3 métriques et génération des figures comparatives et export des résultats vers la métaheuristique|
-| **Dyhia** | Métaheuristiques (Ant Colony Optimization) |
+| **Dyhia** | Implémentation des métaheuristiques (ACO et Algorithme Génétique) et comparaison des performances |
 
 *Projet réalisé dans le cadre de la formation Master 1 MIAGE.*
