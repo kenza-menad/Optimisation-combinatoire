@@ -92,7 +92,7 @@ Lors de l'exécution des scripts principaux, le module `ml` génère automatique
 
 | Membre | Rôles & Contributions |
 | :--- | :--- |
-| **Lyna** | Modélisation de l'environnement (Warehouse Environment), Algorithme Glouton (Baseline), Algorithme Génétique & Intégration globale |
+| **Lyna** | Modélisation de l'environnement (Warehouse Environment), Algorithme Glouton (Baseline), Algorithme Génétique et convergence par rapport au score Glouton & Intégration globale et Analyse de Mise à l’Échelle (Scaling Analysis) |
 | **Kenza** | Comparaison de 4 algorithmes de clustering (K-Means, Agglomerative, GMM, DBSCAN), évaluation avec 3 métriques et génération des figures comparatives et export des résultats vers la métaheuristique|
 | **Dyhia** | Implémentation des métaheuristiques (ACO et Algorithme Génétique) et comparaison des performances |
 
