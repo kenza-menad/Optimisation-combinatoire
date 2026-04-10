@@ -330,7 +330,7 @@ DBSCAN & 1 & \textcolor{gray}{N/A} & \textcolor{gray}{N/A} & \textcolor{gray}{N/
 \item \textbf{DBSCAN a échoué dans cette configuration :} il n'a trouvé qu'un seul cluster (k=1), regroupant tous les articles en un seul batch, ce qui rend son utilisation impossible pour notre pipeline. Ce résultat illustre une limitation connue de DBSCAN : sa sensibilité au paramètre eps. Avec une distribution uniforme des articles, la densité est homogène sur tout l'entrepôt, rendant difficile la détection de zones denses distinctes.
 \end{itemize}
 \section{Visualisations}
-La figure 1 montre côte à côte les résultats des quatre algorithmes sur les mêmes données. Pour K-Means et Agglomerative et GMM  produisent des partitionnements visuellement similaires sur ces données. Les différences s'observent principalement dans les métriques quantitatives, notamment le Silhouette Score légèrement inférieur pour GMM (0,404, 0,361 , 0,390 respectivement). DBSCAN regroupe tout en un seul cluster (orange), ce qui confirme l'échec de l'algorithme.
+La figure 1 montre côte à côte les résultats des quatre algorithmes sur les mêmes données. Pour K-Means et Agglomerative et GMM  produisent des partitionnements visuellement similaires sur ces données. Les différences s'observent principalement dans les métriques quantitatives, notamment le Silhouette Score légèrement inférieur (0,404, 0,361 , 0,390 respectivement). DBSCAN regroupe tout en un seul cluster (orange), ce qui confirme l'échec de l'algorithme.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.98\linewidth]{../../ml/fig1_comparaison_clusterings.png}
