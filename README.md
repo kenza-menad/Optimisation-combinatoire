@@ -82,7 +82,7 @@ python src/metaheuristics/analyze_scaling.py
 
 Lors de l'exécution des scripts principaux, le module `ml` génère automatiquement des fichiers d'analyse :
 * `fig1_comparaison_clusterings.png` : Vue spatiale des clusters selon les différents algorithmes.
-* `fig2_metriques_comparaison.png` : Graphiques en barres des performances (Silhouette, Davies-Bouldin, Temps d'exécution).
+* `fig2_metriques_comparaison.png` : Graphiques en barres des performances (Silhouette, Davies-Bouldin, Calinski-Harabasz, Temps d'exécution).
 * `fig3_best_clustering_detail.png` : Focus sur l'algorithme gagnant et la distribution des charges.
 * `tableau_comparaison_ml.csv` : Données brutes des métriques d'évaluation.
 
